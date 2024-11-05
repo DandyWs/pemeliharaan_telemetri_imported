@@ -1,71 +1,31 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm p-2">
-    <div class="container">
-        
-        <a class="navbar-brand text-primary font-weight-bold text-uppercase" href="{{ url('/') }}">
-            Pemeliharaan Telemetri [Imported]
-        </a>
+<nav class="navbar navbar-expand navbar-light navbar-white">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Left Side Of Navbar -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button">
+                </a>
+            </li>
+        </ul>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-                @auth
+        <!-- Right Side Of Navbar -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Authentication Links -->
+            @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </li>
+                @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">Dashboard</a>
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            Apps <span class="caret"></span>
-                        </a>
-                        
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            @can('view-any', App\Models\User::class)
-                            <a class="dropdown-item" href="{{ route('users.index') }}">Users</a>
-                            @endcan
-                            @can('view-any', App\Models\Pemeriksaan::class)
-                            <a class="dropdown-item" href="{{ route('pemeriksaans.index') }}">Pemeriksaans</a>
-                            @endcan
-                            @can('view-any', App\Models\Pemeliharaan::class)
-                            <a class="dropdown-item" href="{{ route('pemeliharaans.index') }}">Pemeliharaans</a>
-                            @endcan
-                            @can('view-any', App\Models\JenisPeralatan::class)
-                            <a class="dropdown-item" href="{{ route('jenis-peralatans.index') }}">Jenis Peralatans</a>
-                            @endcan
-                            @can('view-any', App\Models\PeralatanTelemetri::class)
-                            <a class="dropdown-item" href="{{ route('peralatan-telemetris.index') }}">Peralatan Telemetris</a>
-                            @endcan
-                            @can('view-any', App\Models\Komponen::class)
-                            <a class="dropdown-item" href="{{ route('komponens.index') }}">Komponens</a>
-                            @endcan
-                            @can('view-any', App\Models\Setting::class)
-                            <a class="dropdown-item" href="{{ route('settings.index') }}">Settings</a>
-                            @endcan
-                            @can('view-any', App\Models\Pemeliharaan::class)
-                            <a class="dropdown-item" href="{{ route('pemeliharaans.index') }}">Forms</a>
-                            @endcan
-                        </div>
-
-                    </li>
-                @endauth
-            </ul>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Authentication Links -->
-                @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                    @endif
+                @endif
                 @else
-                    <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
@@ -82,8 +42,7 @@
                             </form>
                         </div>
                     </li>
-                @endguest
-            </ul>
-        </div>
+            @endguest
+        </ul>
     </div>
 </nav>
