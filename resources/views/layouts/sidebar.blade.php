@@ -2,8 +2,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ url('/') }}" class="brand-link">
-        <img src="https://vemto.app/favicon.png" alt="Vemto Logo" class="brand-image bg-white img-circle">
-        <span class="brand-text font-weight-light">Pemeliharaan Telemetri [Imported]</span>
+        <img src="{{ asset('img/Perumjasatirta1_idcdlXd9mX_0.png') }}" alt="Logo" class="brand-image">
+        <span class="brand-text font-weight-light">Jasa Tirta I</span>
     </a>
 
     <!-- Sidebar -->

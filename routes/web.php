@@ -23,12 +23,12 @@ use App\Http\Controllers\PeralatanTelemetriController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('/')
     ->middleware('auth')
@@ -37,10 +37,7 @@ Route::prefix('/')
         Route::resource('pemeriksaans', PemeriksaanController::class);
         Route::resource('pemeliharaans', PemeliharaanController::class);
         Route::resource('jenis-peralatans', JenisPeralatanController::class);
-        Route::resource(
-            'peralatan-telemetris',
-            PeralatanTelemetriController::class
-        );
+        Route::resource('peralatan-telemetris', PeralatanTelemetriController::class);
         Route::resource('komponens', KomponenController::class);
         Route::resource('settings', SettingController::class);
         Route::resource('pemeliharaans', PemeliharaanController::class);

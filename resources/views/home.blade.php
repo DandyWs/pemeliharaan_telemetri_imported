@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    {{ __('Selamat Datang') }}
+                    Selamat datang di aplikasi Form Pemeliharaan Jasa Tirta I, selamat bekerja
+                    {{ Auth::user()->name }}
                 </div>
             </div>
         </div>
