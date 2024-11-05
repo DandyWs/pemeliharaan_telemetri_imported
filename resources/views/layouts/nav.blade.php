@@ -2,7 +2,7 @@
     <div class="container">
         
         <a class="navbar-brand text-primary font-weight-bold text-uppercase" href="{{ url('/') }}">
-            Pemeliharaan Telemetri [Imported]
+            Jasa Tirta I
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -16,7 +16,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}">Dashboard</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('pemeliharaans.index') }}">Form Pemeliharaan</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             Apps <span class="caret"></span>
                         </a>
@@ -48,7 +51,7 @@
                             @endcan
                         </div>
 
-                    </li>
+                    </li> -->
                 @endauth
             </ul>
 
