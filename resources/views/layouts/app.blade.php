@@ -8,6 +8,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         
         <link rel="icon" href="https://eoffice.jasatirta1.co.id/domcfg.nsf/logo_jastir1.png">
+        
         <title>Pemeliharaan Telemetri</title>
         
         <!-- Scripts -->

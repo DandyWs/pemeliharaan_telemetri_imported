@@ -12,7 +12,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
+<<<<<<< HEAD
                     Selamat Datang {{ Auth::user()->name }}
+=======
+
+                    Selamat datang di aplikasi Form Pemeliharaan Jasa Tirta I, selamat bekerja
+                    {{ Auth::user()->name }}
+>>>>>>> b010519d8edc4c397d083e89adaba070dec212ff
                 </div>
             </div>
         </div>           

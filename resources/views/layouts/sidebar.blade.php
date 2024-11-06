@@ -24,6 +24,7 @@
                 </li>
 
                 <li class="nav-item">
+
                         <a href="{{ route('pemeliharaans.index') }}" class="nav-link">
                         <i class="nav-icon icon ion-md-apps"></i>
                         <p>Form Pemeliharaan</p>
@@ -32,7 +33,6 @@
 
                 @endauth
 <!-- 
-
                 @auth
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
