@@ -12,10 +12,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    
                     Selamat datang di aplikasi Form Pemeliharaan Jasa Tirta I, selamat bekerja
                     {{ Auth::user()->name }}
-
                 </div>
             </div>
         </div>           
@@ -31,6 +29,11 @@
                       <div class="row mb-2">
                         <div class="col-sm-6">
                           <b><h1>Dashboard Mekanik </h1></b>
+                        </div>
+                        <div class="col-sm-6">
+                          <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                          </ol>
                         </div>
                       </div>
         
@@ -142,5 +145,6 @@
                                 </div>                   
         @endsection     
     </div>
-</div>                 
+</div>
 @endsection
+

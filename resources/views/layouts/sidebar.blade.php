@@ -24,16 +24,92 @@
                 </li>
 
                 <li class="nav-item">
-
-                        <a href="{{ route('pemeliharaans.index') }}" class="nav-link">
+                    @can('view-any', App\Models\User::class)
+                    <a href="#" class="nav-link">
                         <i class="nav-icon icon ion-md-apps"></i>
-                        <p>Form Pemeliharaan</p>
-                        </a>
+                        <p>
+                            Apps
+                            <i class="nav-icon right icon ion-md-caret-round-back"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                            @can('view-any', App\Models\User::class)
+                            <li class="nav-item">
+                                <a href="{{ route('users.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>User Management</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('view-any', App\Models\Pemeriksaan::class)
+                            <li class="nav-item">
+                                <a href="{{ route('pemeriksaans.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Pemeriksaans</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('view-any', App\Models\Pemeliharaan::class)
+                            <li class="nav-item">
+                                <a href="{{ route('pemeliharaans.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Pemeliharaans</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('view-any', App\Models\JenisPeralatan::class)
+                            <li class="nav-item">
+                                <a href="{{ route('jenis-peralatans.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Jenis Peralatans</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('view-any', App\Models\PeralatanTelemetri::class)
+                            <li class="nav-item">
+                                <a href="{{ route('peralatan-telemetris.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Peralatan Telemetris</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('view-any', App\Models\Komponen::class)
+                            <li class="nav-item">
+                                <a href="{{ route('komponens.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Komponens</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('view-any', App\Models\Setting::class)
+                            <li class="nav-item">
+                                <a href="{{ route('settings.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Settings</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('view-any', App\Models\Pemeliharaan::class)
+                            <li class="nav-item">
+                                <a href="{{ route('pemeliharaans.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Forms</p>
+                                </a>
+                            </li>
+                            @endcan
+                    </ul>
+                    @endcan
                 </li>
+            
+                @can('view-any', App\Models\Pemeliharaan::class)
+                <li class="nav-item">
+                    <a href="{{ route('pemeliharaans.index') }}" class="nav-link">
+                    <i class="nav-icon icon ion-md-apps"></i>
+                    <p>Form Pemeliharaan</p>
+                    </a>
+                </li>
+                @endcan
 
-                @endauth
-<!-- 
-                @auth
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="nav-icon icon ion-md-exit"></i>
@@ -44,7 +120,7 @@
                         @csrf
                     </form>
                 </li>
-                @endauth -->
+                @endauth 
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

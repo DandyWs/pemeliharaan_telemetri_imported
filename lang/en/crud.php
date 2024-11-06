@@ -32,6 +32,7 @@ return [
         'inputs' => [
             'name' => 'Name',
             'email' => 'Email',
+            'role' => 'Role',
             'password' => 'Password',
         ],
     ],
