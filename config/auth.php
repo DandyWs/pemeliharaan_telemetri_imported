@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'super_admins' => ['admin@admin.com'],
-
+    'super_admins' => ['admin'],
+    'admin' => '',
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults

@@ -24,6 +24,17 @@
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
+        <x-inputs.text
+            name="role"
+            label="Role"
+            :value="old('role', ($editing ? $user->role : ''))"
+            maxlength="255"
+            placeholder="Role"
+            required
+        ></x-inputs.text>
+    </x-inputs.group>
+
+    <x-inputs.group class="col-sm-12">
         <x-inputs.password
             name="password"
             label="Password"

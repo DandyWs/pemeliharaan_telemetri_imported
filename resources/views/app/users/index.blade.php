@@ -50,6 +50,9 @@
                             <th class="text-left">
                                 @lang('crud.users.inputs.email')
                             </th>
+                            <th class="text-left">
+                                @lang('crud.users.inputs.role')
+                            </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
                             </th>
@@ -60,6 +63,7 @@
                         <tr>
                             <td>{{ $user->name ?? '-' }}</td>
                             <td>{{ $user->email ?? '-' }}</td>
+                            <td>{{ $user->role ?? '-' }}</td>
                             <td class="text-center" style="width: 134px;">
                                 <div
                                     role="group"
