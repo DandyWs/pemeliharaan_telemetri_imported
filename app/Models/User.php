@@ -15,6 +15,7 @@ class User extends Authenticatable
     use HasFactory;
     use Searchable;
     use HasApiTokens;
+    // use MustVerifyEmail;
 
     protected $fillable = ['name', 'email', 'password'];
 
