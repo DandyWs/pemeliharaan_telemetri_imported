@@ -16,7 +16,7 @@
                     {{ Auth::user()->name }}
                 </div>
             </div>
-        </div>           
+        </div>
             <div class="row">
                 <div class="col-md-12 grid-margin">
                     @if (session('message'))
@@ -36,7 +36,7 @@
                           </ol>
                         </div>
                       </div>
-        
+
                         <div class="card-header border-0">
                             <!-- Main content -->
                             <div class="card">
@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="card-body">
                         <section class="content">
-        
+
                         <!-- Default box -->
                         <div class="container-fluid">
                             <!-- Small boxes (Stat box) -->
@@ -57,10 +57,10 @@
                                     {{-- <h3>{{ $hitungNasabah }}</h3> --}}
                                     <p>User</p>
                                   </div>
-                                  <div class="icon">
-                                    <i class="fas fa-users fa-2x"></i>
-                                  </div>
-                                  <a href="{{ url('/user') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                  <div class="icon d-flex align-items-center justify-content-center">
+                                    <i class="nav-icon icon ion-md-users" style="font-size: 2.5rem;"></i>
+                                </div>
+                                  <a href="{{ url('/user') }}" class="small-box-footer">More info <i class="nav-icon icon ion-md-arrow-forward" style="font-size: 1.5rem;"></i></a>
                                 </div>
                               </div>
                               <!-- ./col -->
@@ -71,10 +71,10 @@
                                     {{-- <h3>{{ $hitungSopir }}</h3> --}}
                                     <p>Stasiun</p>
                                   </div>
-                                  <div class="icon">
-                                    <i class="fa fa-truck"></i>
-                                  </div>
-                                  <a href="{{ url('/sopir') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                  <div class="icon d-flex align-items-center justify-content-center">
+                                    <i class="nav-icon icon ion-md-home" style="font-size: 2.5rem;"></i>
+                                </div>
+                                  <a href="{{ url('/sopir') }}" class="small-box-footer">More info <i class="nav-icon icon ion-md-arrow-forward" style="font-size: 1.5rem;"></i></a>
                                 </div>
                               </div>
                               <!-- ./col -->
@@ -83,13 +83,12 @@
                                 <div class="small-box bg-warning">
                                   <div class="inner">
                                     {{-- <h3>{{ $hitungSampah }}</h3> --}}
-                    
                                     <p>Form Report</p>
                                   </div>
-                                  <div class="icon">
-                                    <i class="fa fa-book"></i>
-                                  </div>
-                                  <a href="{{ url('/Form') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                  <div class="icon d-flex align-items-center justify-content-center">
+                                    <i class="nav-icon icon ion-md-archive" style="font-size: 2.5rem;"></i>
+                                </div>
+                                  <a href="{{ url('/Form') }}" class="small-box-footer">More info <i class="nav-icon icon ion-md-arrow-forward" style="font-size: 1.5rem;"></i></a>
                                 </div>
                               </div>
                               <!-- ./col -->
@@ -98,13 +97,12 @@
                                 <div class="small-box bg-danger">
                                   <div class="inner">
                                     {{-- <h3>{{ $hitungJadwal }}</h3> --}}
-                    
                                     <p>Jadwal Pemeliharaan</p>
                                   </div>
-                                  <div class="icon">
-                                    <i class="fa fa-calendar"></i>
-                                  </div>
-                                  <a href="{{ url('/jadwal') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                  <div class="icon d-flex align-items-center justify-content-center">
+                                    <i class="nav-icon icon ion-md-time" style="font-size: 2.5rem;"></i>
+                                </div>
+                                  <a href="{{ url('/jadwal') }}" class="small-box-footer">More info <i class="nav-icon icon ion-md-arrow-forward" style="font-size: 1.5rem;"></i></a>
                                 </div>
                               </div>
                               <!-- ./col -->
@@ -112,15 +110,18 @@
                             <div class="card">
                                 <div class="card-header">
                                     <b>Data Form Report</b>
-                                </div> 
+                                </div>
                                 <div class="row d-flex justify-between" style="width: 100%; justify-content: space-between; align-items: center; margin: 0">
                                     <form class="form" method="GET" action="{{ url('transaksi') }}" class="col-md-4" style="padding: 0">
                                       <div class="form-group w-100 mb-3">
                                       </div>
                                     </form>
-        
+                                </div>
+                            </div>
+
+
                                     <div class="card-body">
-                                     
+
                                         <table class="table table-bordered table-striped">
                                           <thead>
                                             <tr>
@@ -160,8 +161,8 @@
                                         </table>
                                       </div>
                                     </div>
-                                </div>                   
-        @endsection     
+                                </div>
+        @endsection
     </div>
 </div>
 @endsection
