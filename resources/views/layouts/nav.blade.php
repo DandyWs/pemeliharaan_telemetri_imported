@@ -30,39 +30,30 @@
                 @else
                 <div class="mt-1 d-flex" name="button" id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="profile rounded-circle mr-2">
-                        @if (Auth::user()->name == "admin")
-                            <img src="assets/dist/img/profile.png" class="" alt="User Image" width="40px">
-                        @elseif(Auth::user()->name == "nasabah")
-                          @if (empty($mekanik->foto))
-                              <img src="assets/dist/img/profile.png" class="" alt="User Image" width="40px">
-                          @else
-                              <img src="{{asset('storage/nasabahprofile/'.$mekanik->foto)}}" class="elevation-2 img-fluid img-thumbnail rounded-circle" width="40px" alt="User Image">
-                          @endif
-                        @else
-                          @if (empty($manager->foto))
-                              <img src="assets/dist/img/profile.png" class="" alt="User Image" width="40px">
-                          @else
-                            <img src="{{asset('storage/sopirprofile/'.$manager->foto)}}" class="elevation-2 img-fluid img-thumbnail rounded-circle" width="40px" alt="User Image">
-                          @endif
+                        @if (Auth::user()->role == "admin")
+                          <ion-icon name="person-outline">Admin</ion-icon>
+                          <span class="caret">{{ Auth::user()->name }}</span>
+                        @elseif(Auth::user()->role == "mekanik")
+                          <ion-icon name="hammer-outline">Mekanik</ion-icon>
+                          <span class="caret">{{ Auth::user()->name }}</span>
+                        @elseif(Auth::user()->role == "manager")
+                        <ion-icon name="desktop-outline">Manager</ion-icon>
+                          <span class="caret">{{ Auth::user()->name }}</span>
                        @endif
                     </div>
                 </div>
 
                         <div class="dropdown-menu dropdown-menu-right fade" style="min-width: 0; border: none; padding: 0;">
                             <a class="dropdown-item btn btn-success" data-toggle="modal" data-target="#detailModal">
-                                <i class="fas fa-info-circle mr-2"></i> Detail
+                                <i class="fas fa-info-circle mr-2"></i>Detail
                             </a>
-                            @if (Auth::user()->name == "admin")
-                              <a class="dropdown-item btn btn-success" data-toggle="modal" data-target="" style="pointer-events: none; cursor: default; opacity: 0.5;">
-                                  <i class="fas fa-edit mr-2"></i> Edit
+                            @if (Auth::user()->role != "admin")
+                              <a class="dropdown-item btn btn-success" data-toggle="modal">
+                                  <i class="fas fa-edit mr-2"></i>Edit Profile
                               </a>                    
-                              @elseif (Auth::user()->name == "mekanik")
+                              @elseif (Auth::user()->role == "admin")
                               <a class="dropdown-item btn btn-success" data-toggle="modal">
-                                  <i class="fas fa-edit mr-2"></i> Edit
-                              </a>
-                              @else
-                              <a class="dropdown-item btn btn-success" data-toggle="modal">
-                                  <i class="fas fa-edit mr-2"></i> Edit
+                                  <i class="fas fa-edit mr-2"></i>Edit Admin
                               </a>
                               @endif
                               <a class="dropdown-item btn btn-success" data-toggle="modal" href="{{ route('logout') }}"
