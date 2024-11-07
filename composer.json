@@ -1,5 +1,5 @@
 {
-    "name": "Website Pemeliharaan Telemetri-1",
+    "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
     "keywords": [
@@ -13,7 +13,6 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        
         "livewire/livewire": "^2.11",
         "laravel/ui": "^4.0"
     },

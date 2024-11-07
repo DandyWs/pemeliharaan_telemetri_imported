@@ -65,9 +65,15 @@
                                   <i class="fas fa-edit mr-2"></i> Edit
                               </a>
                               @endif
-                            <a class="dropdown-item btn btn-success" href="{{ url('/logout') }}">
-                                <i class="fas fa-sign-out-alt mr-2"></i> Logout
-                            </a>
+                              <a class="dropdown-item btn btn-success" data-toggle="modal" href="{{ route('logout') }}"
+                              onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                               {{ __('Logout') }}
+                           </a>
+
+                           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                               @csrf
+                           </form>
                         </div>
                     </li>
             @endguest
