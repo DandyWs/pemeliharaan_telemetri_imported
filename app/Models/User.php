@@ -15,8 +15,9 @@ class User extends Authenticatable
     use HasFactory;
     use Searchable;
     use HasApiTokens;
+    // use MustVerifyEmail;
 
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'email', 'password', 'role'];
 
     protected $searchableFields = ['*'];
 
@@ -44,6 +45,6 @@ class User extends Authenticatable
 
     public function isSuperAdmin(): bool
     {
-        return in_array($this->email, config('auth.super_admins'));
+        return in_array($this->role, config('auth.super_admins'));
     }
 }
