@@ -16,61 +16,59 @@
 
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav ml-auto">
-            <!-- Authentication Links -->
-            @guest
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                </li>
-                @if (Route::has('register'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                    </li>
-                @endif
-
-                @else
-                <div class="mt-1 d-flex" name="button" id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <!-- Authentication Links -->
+        @guest
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+        </li>
+        @if (Route::has('register'))
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+            </li>
+        @endif
+        
+        @else
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="d-flex align-items-center">
                     <div class="profile rounded-circle mr-2">
-                        @if (Auth::user()->role == "admin")
-                          <ion-icon name="person-outline">Admin</ion-icon>
-                          <span class="caret">{{ Auth::user()->name }}</span>
-                        @elseif(Auth::user()->role == "mekanik")
-                          <ion-icon name="hammer-outline">Mekanik</ion-icon>
-                          <span class="caret">{{ Auth::user()->name }}</span>
-                        @elseif(Auth::user()->role == "manager")
-                        <ion-icon name="desktop-outline">Manager</ion-icon>
-                          <span class="caret">{{ Auth::user()->name }}</span>
-                       @endif
+                        @if (empty(Auth::user()->profile_photo_path))
+                            <img src="assets/dist/img/profile.png" alt="" width="40px">
+                        @else
+                            <img src="{{ asset('storage/profiles/' . Auth::user()->profile_photo_path) }}" class="elevation-2 img-fluid img-thumbnail rounded-circle" width="40px" alt="">
+                        @endif
                     </div>
+                    <span>{{ Auth::user()->name }}</span>
                 </div>
-
-                        <div class="dropdown-menu dropdown-menu-right fade" style="min-width: 0; border: none; padding: 0;">
-                            <a class="dropdown-item btn btn-success" data-toggle="modal" data-target="#detailModal">
-                                <i class="fas fa-info-circle mr-2"></i>Detail
-                            </a>
-                            @if (Auth::user()->role != "admin")
-                              <a class="dropdown-item btn btn-success" data-toggle="modal">
-                                  <i class="fas fa-edit mr-2"></i>Edit Profile
-                              </a>                    
-                              @elseif (Auth::user()->role == "admin")
-                              <a class="dropdown-item btn btn-success" data-toggle="modal">
-                                  <i class="fas fa-edit mr-2"></i>Edit Admin
-                              </a>
-                              @endif
-                              <a class="dropdown-item btn btn-success" data-toggle="modal" href="{{ route('logout') }}"
-                              onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                               {{ __('Logout') }}
-                           </a>
-
-                           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                               @csrf
-                           </form>
-                        </div>
-                    </li>
-            @endguest
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
+                <div class="text-center">
+                    @if (empty(Auth::user()->profile_photo_path))
+                        <img src="assets/dist/img/profile.png" alt="Profile" class="rounded-circle" style="width: 80px; height: 80px;">
+                    @else
+                        <img src="{{ asset('storage/profiles/' . Auth::user()->profile_photo_path) }}" class="rounded-circle" style="width: 80px; height: 80px;" alt="">
+                    @endif
+                    <h5>{{ Auth::user()->name }}</h5>
+                    <p>{{ Auth::user()->email }}</p>
+                </div>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" data-toggle="modal" data-target="#detailModal">
+                    <i class="fas fa-info-circle mr-2"></i> Detail
+                </a>
+                <a class="dropdown-item" href="edit_profile.php">
+                    <i class="fas fa-edit mr-2"></i> Edit
+                </a>
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
+        </li>
+        @endguest
         </ul>
     </div>
-
   <!-- Modal Detail-->
     <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
