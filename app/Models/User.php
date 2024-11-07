@@ -17,7 +17,7 @@ class User extends Authenticatable
     use HasApiTokens;
     // use MustVerifyEmail;
 
-    protected $fillable = ['name', 'email', 'password', 'role'];
+    protected $fillable = ['name', 'email', 'password', 'role', 'profile_photo_path'];
 
     protected $searchableFields = ['*'];
 

@@ -29,6 +29,7 @@ class UserUpdateRequest extends FormRequest
             ],
             'role' => ['required', 'max:20','string', 'in:mekanik,admin,manager'],
             'password' => ['nullable'],
+            'profile_photo_path' => ['nullable', 'string', 'max:255'],
         ];
     }
 }

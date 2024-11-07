@@ -25,6 +25,7 @@ class UserStoreRequest extends FormRequest
             'email' => ['required', 'unique:users,email', 'email'],
             'password' => ['required'],
             'role' => ['required', 'string', 'in:mekanik,admin,manager'],
+            'profile_photo_path' => ['nullable', 'string', 'max:255'],
         ];
     }
 }

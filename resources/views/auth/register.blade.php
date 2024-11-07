@@ -38,6 +38,23 @@
                                 @enderror
                             </div>
                         </div>
+                        
+                        <div class="row mb-3">
+                            <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>
+
+                            <div class="col-md-6">
+                                <select id="role" name="role" class="form-control @error('role') is-invalid @enderror" required autocomplete="role">
+                                    <option value="mekanik">Mekanik</option>
+                                    <option value="manager">Ka. Tim Kalibrasi Divisi</option>
+                                </select>
+                                
+                                @error('role')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
@@ -58,6 +75,20 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <label for="profile_photo_path" class="col-md-4 col-form-label text-md-end">{{ __('Profile Photo') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="profile_photo_path" type="file" class="form-control @error('profile_photo_path') is-invalid @enderror" name="profile_photo_path" required autocomplete="profile_photo_path" accept="image/png, image/jpg, image/jpeg">
+                                
+                                @error('profile_photo_path')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 

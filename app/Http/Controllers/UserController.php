@@ -47,6 +47,13 @@ class UserController extends Controller
         $this->authorize('create', User::class);
 
         $validated = $request->validated();
+        if ($request->hasFile('profile_photo_path')) {
+            $image_profile = "user_" . time() . "." . $request->profile_photo_path->extension();
+            $request->file('profile_photo')->move(public_path('image_profile/'), $image_profile);
+            $validated-> profile_photo_path = $image_profile;
+        } else {
+            $validated->profile_photo_path = "not_found";
+        }
 
         $validated['password'] = Hash::make($validated['password']);
 
