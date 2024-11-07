@@ -49,6 +49,7 @@
                             <div class="row">
                               <div class="col-lg-4 col-6">
                                 <!-- small box -->
+                                @if (Auth::user()->role == 'admin')
                                 <div class="small-box bg-info">
                                   <div class="inner">
                                     <h3>{{ $countUser }}</h3>
@@ -59,6 +60,18 @@
                                   </div>
                                   <a href="{{ url('/users') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
+                                @else
+                                <div class="small-box bg-info">
+                                  <div class="inner">
+                                    <h3>{{ $countPemeriksaan }}</h3>
+                                    <p>Form Pemeriksaan</p>
+                                  </div>
+                                  <div class="icon">
+                                    <i class="fa fa-book"></i>
+                                  </div>
+                                  <a href="{{ url('/pemeriksaans') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                </div>
+                                @endif
                               </div>
                               <!-- ./col -->
                               <div class="col-lg-4 col-6">
