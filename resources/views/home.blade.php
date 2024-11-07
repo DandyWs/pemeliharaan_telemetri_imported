@@ -30,7 +30,7 @@
                     <div class="container-fluid">
                       <div class="row mb-2">
                         <div class="col-sm-6">
-                          <b><h1>Dashboard Mekanik </h1></b>
+                          <b><h1>Dashboard {{ Auth::user()->role }}</h1></b>
                         </div>
                       </div>
         
@@ -51,13 +51,13 @@
                                 <!-- small box -->
                                 <div class="small-box bg-info">
                                   <div class="inner">
-                                    {{-- <h3>{{ $hitungNasabah }}</h3> --}}
+                                    <h3>{{ $countUser }}</h3>
                                     <p>User</p>
                                   </div>
                                   <div class="icon">
                                     <i class="fas fa-users fa-2x"></i>
                                   </div>
-                                  <a href="{{ url('/user') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                  <a href="{{ url('/users') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                               </div>
                               <!-- ./col -->
@@ -65,14 +65,13 @@
                                 <!-- small box -->
                                 <div class="small-box bg-warning">
                                   <div class="inner">
-                                    {{-- <h3>{{ $hitungSampah }}</h3> --}}
-                    
+                                    <h3>{{ $countPemeliharaan }}</h3>
                                     <p>Form Pemeliharaan</p>
                                   </div>
                                   <div class="icon">
                                     <i class="fa fa-book"></i>
                                   </div>
-                                  <a href="{{ url('/Form') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                  <a href="{{ url('/pemeliharaans') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                               </div>
                               <!-- ./col -->
@@ -80,14 +79,14 @@
                                 <!-- small box -->
                                 <div class="small-box bg-danger">
                                   <div class="inner">
-                                    {{-- <h3>{{ $hitungJadwal }}</h3> --}}
+                                    <h3>{{ $countPeralatanTelemetri }}</h3>
                     
-                                    <p>Jadwal Pemeliharaan</p>
+                                    <p>Jumlah Alat</p>
                                   </div>
                                   <div class="icon">
                                     <i class="fa fa-calendar"></i>
                                   </div>
-                                  <a href="{{ url('/jadwal') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                  <a href="{{ url('/peralatan-telemetris') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                               </div>
                               <!-- ./col -->
