@@ -3,6 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Pemeriksaan;
+use App\Models\Pemeliharaan;
+use App\Models\JenisPeralatan;
+use App\Models\PeralatanTelemetri;
+use App\Models\Komponen;
+use App\Models\Setting;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +31,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data = [
+            'title' => 'Home',
+            'menu' => 'home',
+            'submenu' => '',
+            'type' => 'home',
+            'countUser' => User::count('id'),
+            'countPemeriksaan' => Pemeriksaan::count('id'),
+            'countPemeliharaan' => Pemeliharaan::count('id'),
+            'countJenisPeralatan' => JenisPeralatan::count('id'),
+            'countPeralatanTelemetri' => PeralatanTelemetri::count('id'),
+            'countKomponen' => Komponen::count('id'),
+            'countSetting' => Setting::count('id'),
+            'countPemeliharaan' => Pemeliharaan::count('id')
+        ];
+        return view('home', $data);
     }
 }
