@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm p-2">
     <div class="container">
-        
+
         <a class="navbar-brand text-primary font-weight-bold text-uppercase" href="{{ url('/') }}">
             Jasa Tirta I
         </a>
@@ -26,14 +26,14 @@
                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
             </li>
         @endif
-        
+
         @else
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="d-flex align-items-center">
                     <div class="profile rounded-circle mr-2">
                         @if (empty(Auth::user()->profile_photo_path))
-                            <img src="assets/dist/img/profile.png" alt="" width="40px">
+                            <img src="public/img/profile.png" alt="" width="40px">
                         @else
                             <img src="{{ asset('storage/profiles/' . Auth::user()->profile_photo_path) }}" class="elevation-2 img-fluid img-thumbnail rounded-circle" width="40px" alt="">
                         @endif
@@ -156,10 +156,10 @@
                   </li>
               </ul>
               @endif --}}
-              
+
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-sm btn-danger" data-dismiss="modal">Tutup</button>            
+                <button type="button" class="btn btn-secondary btn-sm btn-danger" data-dismiss="modal">Tutup</button>
             </div>
         </div>
         </div>
@@ -211,12 +211,12 @@
           </form>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary btn-sm btn-danger" data-dismiss="modal">Batal</button> 
+            <button type="button" class="btn btn-secondary btn-sm btn-danger" data-dismiss="modal">Batal</button>
             <button type="submit" class="btn btn-primary btn-sm btn-success" form="editForm">{{ __('Ubah') }}</button>
         </div>
-      </div>                              
+      </div>
     </div>
-  </div>  
+  </div>
  </div>
 
 </nav>
