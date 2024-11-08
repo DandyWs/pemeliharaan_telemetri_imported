@@ -90,7 +90,9 @@
         </x-inputs.group>
         @php $editing = isset($komponen) @endphp
 
-    <div class="col-md-6">
+    
+        @for ($i = 0; $i < 10; $i++)
+        <div class="col-md-6">
         <x-inputs.group>
             <x-inputs.text
                 name="namaKomponen"
@@ -101,8 +103,30 @@
                 required
             ></x-inputs.text>
         </x-inputs.group>
+        @for ($j = 0; $j < 2; $j++)
+            <x-inputs.group>
+            <x-inputs.checkbox
+                name="indikatorLED"
+                label="Indikator LED"
+                :checked="old('indikatorLED', ($editing ? $komponen->indikatorLED : 0))"
+            ></x-inputs.checkbox>
+            </x-inputs.group>
+        @endfor
+        
+        </div>    
+        @endfor
+        {{-- <x-inputs.group>
+            <x-inputs.text
+                name="namaKomponen"
+                label="Nama Komponen"
+                :value="old('namaKomponen', ($editing ? $komponen->namaKomponen : ''))"
+                maxlength="255"
+                placeholder="Nama Komponen"
+                required
+            ></x-inputs.text>
+        </x-inputs.group> --}}
 
-        <x-inputs.group>
+        {{-- <x-inputs.group>
             <x-inputs.checkbox
                 name="indikatorLED"
                 label="Indikator LED"
@@ -411,6 +435,6 @@
                 placeholder="Display"
                 required
             ></x-inputs.checkbox>
-        </x-inputs.group>
-    </div>
+        </x-inputs.group> --}}
+    
 </div>
