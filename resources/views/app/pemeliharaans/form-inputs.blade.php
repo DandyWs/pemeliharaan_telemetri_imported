@@ -89,27 +89,20 @@
             </x-inputs.select>
         </x-inputs.group>
         @php $editing = isset($komponen) @endphp
-
+    @foreach ($komponen2 as $value)
     <div class="col-md-6">
+        {{$value}}
         <x-inputs.group>
             <x-inputs.text
                 name="namaKomponen"
-                label="Nama Komponen"
+                label="{{$value}}"
                 :value="old('namaKomponen', ($editing ? $komponen->namaKomponen : ''))"
                 maxlength="255"
                 placeholder="Nama Komponen"
                 required
             ></x-inputs.text>
         </x-inputs.group>
-
-        <x-inputs.group>
-            <x-inputs.checkbox
-                name="indikatorLED"
-                label="Indikator LED"
-                :checked="old('indikatorLED', ($editing ? $komponen->indikatorLED : 0))"
-            ></x-inputs.checkbox>
-        </x-inputs.group>
-
+        @for ($j=0;$j<2; $j++)
         <x-inputs.group>
             <x-inputs.checkbox
                 name="simCard"
@@ -117,6 +110,21 @@
                 :checked="old('simCard', ($editing ? $komponen->simCard : 0))"
             ></x-inputs.checkbox>
         </x-inputs.group>
+        @endfor
+    </div> 
+    @endforeach
+    {{$detailKomponen}}
+    <br>{{$komponen2}}
+
+        <!-- <x-inputs.group>
+            <x-inputs.checkbox
+                name="indikatorLED"
+                label="Indikator LED"
+                :checked="old('indikatorLED', ($editing ? $komponen->indikatorLED : 0))"
+            ></x-inputs.checkbox>
+        </x-inputs.group>
+
+        
 
         <x-inputs.group>
             <x-inputs.text
@@ -412,5 +420,5 @@
                 required
             ></x-inputs.checkbox>
         </x-inputs.group>
-    </div>
+    </div> -->
 </div>

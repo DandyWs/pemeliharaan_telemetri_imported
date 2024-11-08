@@ -7,9 +7,11 @@ use Illuminate\View\View;
 use App\Models\Pemeliharaan;
 use Illuminate\Http\Request;
 use App\Models\PeralatanTelemetri;
+use App\Models\Komponen2;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\PemeliharaanStoreRequest;
 use App\Http\Requests\PemeliharaanUpdateRequest;
+use App\Models\DetailKomponen;
 
 class PemeliharaanController extends Controller
 {
@@ -42,10 +44,11 @@ class PemeliharaanController extends Controller
 
         $users = User::pluck('name', 'id');
         $peralatanTelemetris = PeralatanTelemetri::pluck('namaAlat', 'id');
-
+        $komponen2 = Komponen2::pluck('nama', 'id');
+        $detailKomponen = DetailKomponen::all();
         return view(
             'app.pemeliharaans.create',
-            compact('users', 'peralatanTelemetris')
+            compact('users', 'peralatanTelemetris','komponen2','detailKomponen')
         );
     }
 
