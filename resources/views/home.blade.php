@@ -102,32 +102,56 @@
                                         </div>
                                         <!-- ./col -->
                             </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <b>Data Form Pemeliharaan</b>
-                                </div>
-                                <div class="row d-flex justify-between" style="width: 100%; justify-content: space-between; align-items: center; margin: 0">
-                                    <form class="form" method="GET" action="{{ url('transaksi') }}" class="col-md-4" style="padding: 0">
-                                      <div class="form-group w-100 mb-3">
-                                      </div>
-                                    </form>
+                                     <!-- Table Section for Form Pemeliharaan -->
+                                     <div class="card">
+                                        <div class="card-header">
+                                            <b>Data Form Pemeliharaan</b>
+                                        </div>
+                                        <div class="row d-flex justify-between" style="width: 100%; justify-content: space-between; align-items: center; margin: 0">
+                                            <form class="form" method="GET" action="{{ url('transaksi') }}" class="col-md-4" style="padding: 0">
+                                              <div class="form-group w-100 mb-3">
+                                              </div>
+                                            </form>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Tanggal</th>
+                                                            <th>Waktu Mulai</th>
+                                                            <th>Periode</th>
+                                                            <th>Cuaca</th>
+                                                            <th>No Alat Ukur</th>
+                                                            <th>No GSM</th>
+                                                            <th>Petugas</th>
+                                                            <th>Peralatan Telemetri</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @forelse ($pemeliharaans as $index => $pemeliharaan)
+                                                            <tr>
+                                                                <td>{{ $index + 1 }}</td>
+                                                                <td>{{ $pemeliharaan->tanggalPemeliharan ?? '-' }}</td>
+                                                                <td>{{ $pemeliharaan->waktuMulaiPemeliharan ?? '-' }}</td>
+                                                                <td>{{ $pemeliharaan->periodePemeliharaan ?? '-' }}</td>
+                                                                <td>{{ $pemeliharaan->cuaca ?? '-' }}</td>
+                                                                <td>{{ $pemeliharaan->no_AlatUkur ?? '-' }}</td>
+                                                                <td>{{ $pemeliharaan->no_GSM ?? '-' }}</td>
+                                                                <td>{{ $pemeliharaan->user->name ?? '-' }}</td>
+                                                                <td>{{ $pemeliharaan->peralatanTelemetri->namaAlat ?? '-' }}</td>
+                                                            </tr>
+                                                        @empty
+                                                            <tr>
+                                                                <td colspan="9" class="text-center">No data available</td>
+                                                            </tr>
+                                                        @endforelse
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                    <div class="card-body">
-
-                                        <table class="table table-bordered table-striped">
-                                          <thead>
-                                            <tr>
-                                              <th>#</th>
-                                              <th>Tanggal</th>
-                                              <th>Jenis Alat</th>
-                                              <th>petugas</th>
-                                              <th>Peralatan Telemetri</th>
-                                            </tr>
-                                          </thead>
-                                          <tbody>
-
-                                          </tbody>
-                                        </table>
                                       </div>
                                     </div>
                                 </div>

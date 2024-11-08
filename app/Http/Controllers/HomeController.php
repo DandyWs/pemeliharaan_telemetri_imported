@@ -43,7 +43,8 @@ class HomeController extends Controller
             'countPeralatanTelemetri' => PeralatanTelemetri::count('id'),
             'countKomponen' => Komponen::count('id'),
             'countSetting' => Setting::count('id'),
-            'countPemeliharaan' => Pemeliharaan::count('id')
+            'countPemeliharaan' => Pemeliharaan::count('id'),
+            'pemeliharaans' => Pemeliharaan::latest()->limit(5)->get() // Limit to 5 recent records
         ];
         return view('home', $data);
     }
