@@ -119,11 +119,8 @@
                                                         <tr>
                                                             <th>#</th>
                                                             <th>Tanggal</th>
-                                                            <th>Waktu Mulai</th>
                                                             <th>Periode</th>
                                                             <th>Cuaca</th>
-                                                            <th>No Alat Ukur</th>
-                                                            <th>No GSM</th>
                                                             <th>Petugas</th>
                                                             <th>Peralatan Telemetri</th>
                                                         </tr>
@@ -133,11 +130,8 @@
                                                             <tr>
                                                                 <td>{{ $index + 1 }}</td>
                                                                 <td>{{ $pemeliharaan->tanggalPemeliharan ?? '-' }}</td>
-                                                                <td>{{ $pemeliharaan->waktuMulaiPemeliharan ?? '-' }}</td>
                                                                 <td>{{ $pemeliharaan->periodePemeliharaan ?? '-' }}</td>
                                                                 <td>{{ $pemeliharaan->cuaca ?? '-' }}</td>
-                                                                <td>{{ $pemeliharaan->no_AlatUkur ?? '-' }}</td>
-                                                                <td>{{ $pemeliharaan->no_GSM ?? '-' }}</td>
                                                                 <td>{{ $pemeliharaan->user->name ?? '-' }}</td>
                                                                 <td>{{ $pemeliharaan->peralatanTelemetri->namaAlat ?? '-' }}</td>
                                                             </tr>
