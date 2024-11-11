@@ -419,6 +419,6 @@
                 placeholder="Display"
                 required
             ></x-inputs.checkbox>
-        </x-inputs.group>
+        </x-inputs.group> 
     </div> -->
 </div>
