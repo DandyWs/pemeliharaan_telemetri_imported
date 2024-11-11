@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Komponen2;
 use Illuminate\Http\Request;
+use App\Models\DetailKomponen;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\DetailKomponenResource;
 use App\Http\Resources\DetailKomponenCollection;
