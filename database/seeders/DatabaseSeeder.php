@@ -21,12 +21,19 @@ class DatabaseSeeder extends Seeder
                 'role' => 'admin',
             ]);
 
-        $this->call(JenisPeralatanSeeder::class);
-        $this->call(KomponenSeeder::class);
-        $this->call(PemeliharaanSeeder::class);
-        $this->call(PemeriksaanSeeder::class);
-        $this->call(PeralatanTelemetriSeeder::class);
-        $this->call(SettingSeeder::class);
-        $this->call(UserSeeder::class);
+            $this->call(AlatTelemetriSeeder::class);
+            $this->call(DetailKomponenSeeder::class);
+            $this->call(FormKomponenSeeder::class);
+            $this->call(JenisAlatSeeder::class);
+            $this->call(JenisPeralatanSeeder::class);
+            $this->call(KomponenSeeder::class);
+            $this->call(Komponen2Seeder::class);
+            $this->call(PemeliharaanSeeder::class);
+            $this->call(Pemeliharaan2Seeder::class);
+            $this->call(PemeriksaanSeeder::class);
+            $this->call(PeralatanTelemetriSeeder::class);
+            $this->call(SettingSeeder::class);
+            $this->call(Setting2Seeder::class);
+            $this->call(UserSeeder::class);
     }
 }
