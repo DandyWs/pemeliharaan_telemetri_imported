@@ -74,8 +74,11 @@ class PemeliharaanController extends Controller
     public function show(Request $request, Pemeliharaan $pemeliharaan): View
     {
         $this->authorize('view', $pemeliharaan);
+        $komponen2 = Komponen2::pluck('nama', 'id');
+        $detailKomponen = DetailKomponen::all();
 
-        return view('app.pemeliharaans.show', compact('pemeliharaan'));
+
+        return view('app.pemeliharaans.show', compact('pemeliharaan', 'komponen2', 'detailKomponen'));
     }
 
     /**
@@ -87,10 +90,12 @@ class PemeliharaanController extends Controller
 
         $users = User::pluck('name', 'id');
         $peralatanTelemetris = PeralatanTelemetri::pluck('namaAlat', 'id');
+        $komponen2 = Komponen2::pluck('nama', 'id');
+        $detailKomponen = DetailKomponen::all();
 
         return view(
             'app.pemeliharaans.edit',
-            compact('pemeliharaan', 'users', 'peralatanTelemetris')
+            compact('pemeliharaan', 'users', 'peralatanTelemetris', 'komponen2', 'detailKomponen')
         );
     }
 

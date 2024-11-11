@@ -89,6 +89,7 @@
             </x-inputs.select>
         </x-inputs.group>
         @php $editing = isset($komponen) @endphp
+        @isset($komponen2)
     @foreach ($komponen2 as $value)
     <div class="col-md-6">
         {{$value}}
@@ -102,6 +103,7 @@
                 required
             ></x-inputs.text>
         </x-inputs.group>
+        @isset($detailKomponen)
         @foreach ($detailKomponen as $detailsKomponen)
         <x-inputs.group>
             <x-inputs.checkbox
@@ -111,8 +113,10 @@
             ></x-inputs.checkbox>
         </x-inputs.group>
         @endforeach
-    </div> 
+        @endisset
+    </div>
     @endforeach
+    @endisset
     {{$detailKomponen}}
     <br>{{$komponen2}}
 
