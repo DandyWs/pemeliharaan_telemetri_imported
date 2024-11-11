@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Pemeliharaan2;
 use App\Http\Resources\Pemeliharaan2Resource;
 use App\Http\Resources\Pemeliharaan2Collection;
 

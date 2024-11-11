@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Models\Pemeliharaan2;
+use App\Models\FormKomponen;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\FormKomponenResource;
 use App\Http\Resources\FormKomponenCollection;
