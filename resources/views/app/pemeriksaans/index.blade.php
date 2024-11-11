@@ -38,12 +38,15 @@
     </div>
 
     <div class="card">
+        <div class="card-header">
+            <b>Pemeriksaan List</b>
+        </div>
+        <div class="row d-flex justify-between" style="width: 100%; justify-content: space-between; align-items: center; margin: 0">
+            <form class="form" method="GET" action="@lang('crud.forms.index_title')" class="col-md-4" style="padding: 0">
+              <div class="form-group w-100 mb-3">
+              </div>
         <div class="card-body">
-            <div style="display: flex; justify-content: space-between;">
-                <h4 class="card-title">
-                    @lang('crud.pemeriksaans.index_title')
-                </h4>
-            </div>
+
 
             <div class="table-responsive">
                 <table class="table table-bordered table-striped">
