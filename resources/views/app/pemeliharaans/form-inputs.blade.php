@@ -89,6 +89,7 @@
             </x-inputs.select>
         </x-inputs.group>
         @php $editing = isset($komponen) @endphp
+        @isset($komponen2)
     @foreach ($komponen2 as $value)
     <div class="col-md-6">
         {{$value}}
@@ -140,13 +141,15 @@
         <x-inputs.group>
             <x-inputs.checkbox
                 name="simCard"
-                label="Sim Card Aktif"
-                :checked="old('simCard', ($editing ? $komponen->simCard : 0))"
+                label="{{ $detailsKomponen }}"
+                :checked="old('simCard', ($editing ? $detailkomponen->namadetail : 0))"
             ></x-inputs.checkbox>
         </x-inputs.group>
-        @endfor
-    </div> 
+        @endforeach
+        @endisset
+    </div>
     @endforeach
+    @endisset
     {{$detailKomponen}}
     <br>{{$komponen2}}
 
