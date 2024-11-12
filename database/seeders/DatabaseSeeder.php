@@ -37,14 +37,14 @@ class DatabaseSeeder extends Seeder
             ->create([
                 'nama' => 'Komponen',
             ]);
-        
+
             $detailKomponens = \App\Models\DetailKomponen::factory()
             ->count(1)
             ->create([
                 'namadetail' => 'Detail',
                 'komponen2_id' => '1',
             ]);
-        
+
         $pemeliharaan2s = \App\Models\Pemeliharaan2::factory()
             ->count(1)
             ->create([
@@ -70,7 +70,7 @@ class DatabaseSeeder extends Seeder
                 'display' => '1',
                 'form_komponen_id' => '1',
             ]);
-        $
+
 
             $this->call(AlatTelemetriSeeder::class);
             $this->call(DetailKomponenSeeder::class);
