@@ -107,9 +107,9 @@
         @foreach ($detailKomponen as $detailsKomponen)
         <x-inputs.group>
             <x-inputs.checkbox
-                name="simCard"
-                label="{{ $detailsKomponen }}"
-                :checked="old('simCard', ($editing ? $detailkomponen->namadetail : 0))"
+                name="detailKomponen"
+                label="{{ $detailsKomponen->namadetail->where('komponen2_id', $komponen2->id) }}"
+                :checked="old('detailKomponen', ($editing ? $detailkomponen->namadetail : ''))"
             ></x-inputs.checkbox>
         </x-inputs.group>
         @endforeach
