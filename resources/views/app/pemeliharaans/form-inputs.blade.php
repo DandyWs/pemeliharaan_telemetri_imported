@@ -103,7 +103,6 @@
                 required
             ></x-inputs.text>
         </x-inputs.group>
-<<<<<<< HEAD
         @for ($j = 0; $j < 2; $j++)
             <x-inputs.group>
             <x-inputs.checkbox
@@ -113,8 +112,8 @@
             ></x-inputs.checkbox>
             </x-inputs.group>
         @endfor
-        
-        </div>    
+
+        </div>
         @endfor
         {{-- <x-inputs.group>
             <x-inputs.text
@@ -135,9 +134,6 @@
             ></x-inputs.checkbox>
         </x-inputs.group>
 
-=======
-        @for ($j=0;$j<2; $j++)
->>>>>>> 8570ef186f89ce9629582146724c0631f4bcb6c0
         <x-inputs.group>
             <x-inputs.checkbox
                 name="detailKomponen"
@@ -161,7 +157,7 @@
             ></x-inputs.checkbox>
         </x-inputs.group>
 
-        
+
 
         <x-inputs.group>
             <x-inputs.text
@@ -296,7 +292,7 @@
             ></x-inputs.checkbox>
         </x-inputs.group>
     </div>
-    
+
     <div class="col-md-6">
         <x-inputs.group>
             <x-inputs.text
@@ -456,11 +452,6 @@
                 placeholder="Display"
                 required
             ></x-inputs.checkbox>
-<<<<<<< HEAD
         </x-inputs.group> --}}
-    
-=======
-        </x-inputs.group>
-    </div> -->
->>>>>>> 8570ef186f89ce9629582146724c0631f4bcb6c0
+
 </div>
