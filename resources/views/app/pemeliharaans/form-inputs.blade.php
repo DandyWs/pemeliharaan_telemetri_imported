@@ -111,8 +111,8 @@
             ></x-inputs.checkbox>
             </x-inputs.group>
         @endforeach
-            
-        </div>    
+
+        </div>
     @endforeach
         @endisset
 </div>
