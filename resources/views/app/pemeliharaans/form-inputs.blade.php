@@ -92,7 +92,6 @@
         @isset($komponen2)
     @foreach ($komponen2 as $value)
     <div class="col-md-6">
-        {{$value}}
         <x-inputs.group>
             <x-inputs.text
                 name="namaKomponen"
@@ -107,8 +106,8 @@
             <x-inputs.group>
             <x-inputs.checkbox
                 name="indikatorLED"
-                label="Indikator LED"
-                :checked="old('indikatorLED', ($editing ? $komponen->indikatorLED : 0))"
+                label="{{ $detailsKomponen->namadetail}}"
+                :checked="old('indikatorLED', ($editing ? $detailKomponen->namaDetail : ''))"
             ></x-inputs.checkbox>
             </x-inputs.group>
         @endfor
@@ -142,8 +141,8 @@
             ></x-inputs.checkbox>
         </x-inputs.group>
         @endforeach
-        @endisset
-    </div>
+
+        </div>
     @endforeach
     @endisset
     {{$detailKomponen}}
