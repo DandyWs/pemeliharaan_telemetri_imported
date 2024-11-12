@@ -52,28 +52,28 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th class="text-left">
+                            <th class="text-center">
                                 @lang('crud.forms.inputs.tanggalPemeliharan')
                             </th>
-                            <th class="text-left">
+                            <th class="text-center">
                                 @lang('crud.forms.inputs.waktuMulaiPemeliharan')
                             </th>
-                            <th class="text-left">
+                            <th class="text-center">
                                 @lang('crud.forms.inputs.periodePemeliharaan')
                             </th>
-                            <th class="text-left">
+                            <th class="text-center">
                                 @lang('crud.forms.inputs.cuaca')
                             </th>
-                            <th class="text-left">
+                            <th class="text-center">
                                 @lang('crud.forms.inputs.no_AlatUkur')
                             </th>
-                            <th class="text-left">
+                            <th class="text-center">
                                 @lang('crud.forms.inputs.no_GSM')
                             </th>
-                            <th class="text-left">
+                            <th class="text-center">
                                 @lang('crud.forms.inputs.user_id')
                             </th>
-                            <th class="text-left">
+                            <th class="text-center  ">
                                 @lang('crud.forms.inputs.peralatan_telemetri_id')
                             </th>
                             <th class="text-center">
