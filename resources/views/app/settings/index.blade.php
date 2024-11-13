@@ -52,6 +52,7 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th class="text-left">
                                 @lang('crud.settings.inputs.namaSetting')
                             </th>
@@ -78,6 +79,7 @@
                     <tbody>
                         @forelse($settings as $setting)
                         <tr>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $setting->namaSetting ?? '-' }}</td>
                             <td>
                                 {{ $setting->nilaiSebelumKalibrasi ?? '-' }}

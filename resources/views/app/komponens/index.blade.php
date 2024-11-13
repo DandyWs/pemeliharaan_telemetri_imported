@@ -52,6 +52,7 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th class="text-left">
                                 @lang('crud.komponens.inputs.namaKomponen')
                             </th>
@@ -90,6 +91,7 @@
                     <tbody>
                         @forelse($komponens as $komponen)
                         <tr>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $komponen->namaKomponen ?? '-' }}</td>
                             <td>{{ $komponen->indikatorLED ?? '-' }}</td>
                             <td>{{ $komponen->simCard ?? '-' }}</td>

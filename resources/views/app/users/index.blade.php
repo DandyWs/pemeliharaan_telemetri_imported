@@ -49,6 +49,7 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th class="text-left">
                                 @lang('crud.users.inputs.name')
                             </th>
@@ -66,6 +67,7 @@
                     <tbody>
                         @forelse($users as $user)
                         <tr>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $user->name ?? '-' }}</td>
                             <td>{{ $user->email ?? '-' }}</td>
                             <td>{{ $user->role ?? '-' }}</td>
