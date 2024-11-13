@@ -91,22 +91,37 @@
         @php $editing = isset($komponen) @endphp
         
         @foreach ($komponen2 as $value)
-    <div class="col-md-6">
-        <x-inputs.group>
-            <label for="namaKomponen">{{$value}}</label>
-            <span>{{ old('namaKomponen', ($editing ? $komponen->namaKomponen : '')) }}</span>
-        </x-inputs.group>
-        @foreach ($detailKomponen as $detailsKomponen)
-        <x-inputs.group>
-            <x-inputs.checkbox
-                name="simCard"
-                label="{{ $detailsKomponen->namadetail }}"
-                :checked="old('simCard', ($editing ? $detailKomponen->namadetail : 0))"
-            ></x-inputs.checkbox>
-        </x-inputs.group>
+        <div class="col-md-6">
+            <x-inputs.group>
+                <label for="namaKomponen">{{$value}}</label>
+                <span>{{ old('namaKomponen', ($editing ? $komponen->namaKomponen : '')) }}</span>
+            </x-inputs.group>
+            @foreach ($detailKomponen as $detailsKomponen)
+            <x-inputs.group>
+                <x-inputs.checkbox
+                    name="simCard"
+                    label="{{ $detailsKomponen->namadetail }}"
+                    :checked="old('simCard', ($editing ? $detailKomponen->namadetail : 0))"
+                ></x-inputs.checkbox>
+            </x-inputs.group>
+            @endforeach
+            
+        </div>
         @endforeach
-        
-    </div>
-    @endforeach
- 
+        {{-- @if (!$pemeliharaan->hasBeenSigned()) --}}
+            {{-- <form action="{{ $pemeliharaan->getSignatureRoute() }}" method="POST">
+                @csrf --}}
+                <div style="text-align: center">
+                    <x-creagia-signature-pad
+                        border-color="#eaeaea"
+                        pad-classes="rounded-xl border-2"
+                        button-classes="bg-gray-100 px-4 py-2 rounded-xl mt-4"
+                        clear-name="Clear"
+                        submit-name="Submit"
+                        :disabled-without-signature="true"
+                    />
+                </div>
+            {{-- </form> --}}
+            <script src="{{ asset('vendor/sign-pad/sign-pad.min.js') }}"></script>
+        {{-- @endif --}}
 </div>
