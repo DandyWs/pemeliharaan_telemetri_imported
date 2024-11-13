@@ -51,6 +51,7 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th class="text-left">
                                 @lang('crud.peralatan_telemetris.inputs.namaAlat')
                             </th>
@@ -71,6 +72,7 @@
                     <tbody>
                         @forelse($peralatanTelemetris as $peralatanTelemetri)
                         <tr>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $peralatanTelemetri->namaAlat ?? '-' }}</td>
                             <td>
                                 {{ $peralatanTelemetri->serialNumber ?? '-' }}

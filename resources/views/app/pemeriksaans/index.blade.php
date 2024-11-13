@@ -52,6 +52,7 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th class="text-left">
                                 @lang('crud.pemeriksaans.inputs.hasilPemeriksaan')
                             </th>
@@ -78,6 +79,7 @@
                     <tbody>
                         @forelse($pemeriksaans as $pemeriksaan)
                         <tr>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $pemeriksaan->hasilPemeriksaan ?? '-' }}</td>
                             <td>{{ $pemeriksaan->catatan ?? '-' }}</td>
                             <td>

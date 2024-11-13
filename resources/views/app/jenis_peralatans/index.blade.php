@@ -52,6 +52,7 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th class="text-left">
                                 @lang('crud.jenis_peralatans.inputs.namaJenisAlat')
                             </th>
@@ -63,6 +64,7 @@
                     <tbody>
                         @forelse($jenisPeralatans as $jenisPeralatan)
                         <tr>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $jenisPeralatan->namaJenisAlat ?? '-' }}</td>
                             <td class="text-center" style="width: 134px;">
                                 <div
