@@ -107,19 +107,18 @@
         @foreach ($komponen2 as $value)
         <div class="col-md-6">
             <x-inputs.group>
-                <label for="namaKomponen">{{$value}}</label>
-                <span>{{ old('namaKomponen', ($editing ? $komponen->namaKomponen : '')) }}</span>
+                <label for="namaKomponen">{{$value->nama}}</label>
+                <span>{{ old('namaKomponen', ($editing ? $komponen2->nama : '')) }}</span>
             </x-inputs.group>
-            @foreach ($detailKomponen as $detailsKomponen)
+            @foreach ($detailKomponen->where('komponen2_id', $value->id) as $detailsKomponen)
             <x-inputs.group>
                 <x-inputs.checkbox
-                    name="simCard"
+                    name="detailKomponen"
                     label="{{ $detailsKomponen->namadetail }}"
-                    :checked="old('simCard', ($editing ? $detailKomponen->namadetail : 0))"
+                    :checked="old('detailKomponen', ($editing ? $detailKomponen->namadetail : 0))"
                 ></x-inputs.checkbox>
             </x-inputs.group>
             @endforeach
-            
         </div>
         @endforeach
         {{-- @if (!$pemeliharaan->hasBeenSigned()) --}}
@@ -127,8 +126,8 @@
                 @csrf --}}
                 <div style="text-align: center">
                     <x-creagia-signature-pad
-                        border-color="#eaeaea"
-                        pad-classes="rounded-xl border-2"
+                        border-color="#0000FF"
+                        pad-classes="rounded-xl border-3"
                         button-classes="bg-gray-100 px-4 py-2 rounded-xl mt-4"
                         clear-name="Clear"
                         submit-name="Submit"

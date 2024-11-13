@@ -47,8 +47,8 @@ class PemeliharaanController extends Controller
         $users = User::pluck('name', 'id');
         $alatTelemetri = AlatTelemetri::pluck('lokasiStasiun', 'id');
         $jenisAlat = JenisAlat::pluck('namajenis', 'id');
-        $komponen2 = Komponen2::pluck('nama', 'id');
-        $detailKomponen = DetailKomponen::all();
+        $komponen2 = Komponen2::all();
+        $detailKomponen = DetailKomponen::all()->whereIn('komponen2_id', Komponen2::pluck('id'));
         return view(
             'app.pemeliharaans.create',
             compact('users', 'alatTelemetri','komponen2','detailKomponen', 'jenisAlat')
@@ -93,7 +93,7 @@ class PemeliharaanController extends Controller
 
         $users = User::pluck('name', 'id');
         $peralatanTelemetris = PeralatanTelemetri::pluck('namaAlat', 'id');
-        $komponen2 = Komponen2::pluck('nama', 'id');
+        $komponen2 = Komponen2::all();
         $detailKomponen = DetailKomponen::all();
 
         return view(
