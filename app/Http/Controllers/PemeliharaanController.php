@@ -10,6 +10,9 @@ use App\Models\PeralatanTelemetri;
 use App\Models\Komponen2;
 use App\Models\AlatTelemetri;
 use App\Models\JenisAlat;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\PemeliharaanExport;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\PemeliharaanStoreRequest;
 use App\Http\Requests\PemeliharaanUpdateRequest;
@@ -134,5 +137,22 @@ class PemeliharaanController extends Controller
         return redirect()
             ->route('pemeliharaans.index')
             ->withSuccess(__('crud.common.removed'));
+    }public function export(Request $request, $format)
+    {
+        $this->authorize('view-any', Pemeliharaan::class);
+
+        $pemeliharaans = Pemeliharaan::all();
+
+        if ($format === 'pdf') {
+            $pdf = Pdf::loadView('app.pemeliharaans.export_pdf', compact('pemeliharaans'));
+            return $pdf->download('pemeliharaan_list.pdf');
+        } elseif ($format === 'xlsx') {
+            return Excel::download(new PemeliharaanExport, 'pemeliharaan_list.xlsx');
+        }
+
+        return redirect()->route('pemeliharaans.index')
+            ->withErrors(__('crud.common.export_failed'));
     }
+
+
 }

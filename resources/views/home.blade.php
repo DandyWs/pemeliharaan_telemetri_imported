@@ -115,15 +115,27 @@
                                         <div class="card-body">
                                             <div class="table-responsive">
                                                 <table class="table table-bordered table-striped">
-                                                    <thead>
+                                                    <thead>                        
                                                         <tr>
                                                             <th>#</th>
-                                                            <th>Tanggal</th>
-                                                            <th>Periode</th>
-                                                            <th>Cuaca</th>
-                                                            <th>Petugas</th>
-                                                            <th>Peralatan Telemetri</th>
+                                                            <th class="text-center">
+                                                                @lang('crud.forms.inputs.waktuMulaiPemeliharan')
+                                                            </th>
+                                                            <th class="text-center">
+                                                                @lang('crud.forms.inputs.periodePemeliharaan')
+                                                            </th>
+                                                            <th class="text-center">
+                                                                @lang('crud.forms.inputs.cuaca')
+                                                            </th>
+                                                            </th>
+                                                            <th class="text-center">
+                                                                @lang('crud.forms.inputs.user_id')
+                                                            </th>
+                                                            <th class="text-center  ">
+                                                                @lang('crud.forms.inputs.peralatan_telemetri_id')
+                                                            </th>
                                                         </tr>
+
                                                     </thead>
                                                     <tbody>
                                                         @forelse ($pemeliharaans as $index => $pemeliharaan)

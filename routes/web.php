@@ -41,4 +41,6 @@ Route::prefix('/')
         Route::resource('komponens', KomponenController::class);
         Route::resource('settings', SettingController::class);
         Route::resource('pemeliharaans', PemeliharaanController::class);
+        Route::get('pemeliharaans/export/{format}', [PemeliharaanController::class, 'export'])->name('pemeliharaans.export');
+
     });
