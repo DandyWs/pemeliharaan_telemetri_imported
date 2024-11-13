@@ -11,6 +11,7 @@
                 <form action="{{ route('login') }}" method="POST" autocomplete="off" id="LoginAjax" parsley-validate novalidate>
                     @csrf
                         <div class="mb-3">
+                        <img src="https://eoffice.jasatirta1.co.id/domcfg.nsf/logo_jastir1.png" alt="Logo" class="img-fluid mx-auto d-block mb-4" width="200" height="200">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
