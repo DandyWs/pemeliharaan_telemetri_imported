@@ -26,13 +26,16 @@
             </div>
             <div class="col-md-6 text-right">
                 @can('create', App\Models\Pemeliharaan::class)
-                <a
-                    href="{{ route('pemeliharaans.create') }}"
-                    class="btn btn-primary"
-                >
+                <a href="{{ route('pemeliharaans.create') }}" class="btn btn-primary">
                     <i class="icon ion-md-add"></i> @lang('crud.common.create')
                 </a>
                 @endcan
+                <a href="{{ route('pemeliharaans.export', ['format' => 'pdf']) }}" class="btn btn-danger ml-2">
+                    <i class="icon ion-md-download"></i> Export PDF
+                </a>
+                <a href="{{ route('pemeliharaans.export', ['format' => 'xlsx']) }}" class="btn btn-success ml-2">
+                    <i class="icon ion-md-download"></i> Export XLSX
+                </a>
             </div>
         </div>
     </div>
@@ -45,6 +48,8 @@
             <form class="form" method="GET" action="@lang('crud.forms.index_title')" class="col-md-4" style="padding: 0">
               <div class="form-group w-100 mb-3">
               </div>
+              <div class="col-md-6 text-right">
+            </div>
         <div class="card-body">
 
 

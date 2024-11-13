@@ -159,7 +159,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        // s
         /*
          * Application Service Providers...
          */
@@ -169,7 +169,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
     ])->toArray(),
-
+    
     /*
     |--------------------------------------------------------------------------
     | Class Aliases
@@ -183,6 +183,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ])->toArray(),
 
 ];

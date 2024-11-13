@@ -103,7 +103,7 @@
             </x-inputs.select>
         </x-inputs.group>
         @php $editing = isset($komponen) @endphp
-        
+
         @foreach ($komponen2 as $value)
         <div class="col-md-6">
             <x-inputs.group>
@@ -119,16 +119,25 @@
                 ></x-inputs.checkbox>
             </x-inputs.group>
             @endforeach
+
+
         </div>
         @endforeach
-        <!-- {{-- @if (!$pemeliharaan->hasBeenSigned()) --}} -->
-            <!-- {{-- <form action="{{ $pemeliharaan->getSignatureRoute() }}" method="POST">
-                @csrf --}} -->
+        <div class="card">
+            <div class="card-header" style="align-items: center";>
+                <b>Tandatangan disini:</b>
+            </div>
+            <div class="row d-flex justify-between" style="width: 100%; justify-content: space-between; align-items: center; margin: 0">
+                  </div>
+        {{-- @if (!$pemeliharaan->hasBeenSigned()) --}}
+            {{-- <form action="{{ $pemeliharaan->getSignatureRoute() }}" method="POST">
+                @csrf --}}
                 <div style="text-align: center">
                     <x-creagia-signature-pad
-                        border-color="#0000FF"
-                        pad-classes="rounded-xl border-3"
-                        button-classes="bg-gray-100 px-4 py-2 rounded-xl mt-4"
+                        border-color="#eaeaea"
+                        pad-classes="rounded-x2 border-3"
+                        button-classes="bg-gray-100 px-4 py-2 rounded-xl mt-6"
+
                         clear-name="Clear"
                         submit-name="Submit"
                         :disabled-without-signature="true"
