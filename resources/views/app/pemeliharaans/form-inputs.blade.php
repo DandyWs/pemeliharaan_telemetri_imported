@@ -77,13 +77,27 @@
 
         <x-inputs.group class="col-md-6">
             <x-inputs.select
-                name="peralatan_telemetri_id"
-                label="Peralatan Telemetri"
+                name="alat_telemetri_id"
+                label="Lokasi Stasiun"
                 required
             >
-                @php $selected = old('peralatan_telemetri_id', ($editing ? $pemeliharaan->peralatan_telemetri_id : '')) @endphp
-                <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Peralatan Telemetri</option>
-                @foreach($peralatanTelemetris as $value => $label)
+                @php $selected = old('alat_telemetri_id', ($editing ? $pemeliharaan2->alat_telemetri_id : '')) @endphp
+                <option disabled {{ empty($selected) ? 'selected' : '' }}>Pilih Lokasi Stasiun</option>
+                @foreach($alatTelemetri as $value => $label)
+                <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
+                @endforeach
+            </x-inputs.select>
+        </x-inputs.group>
+
+        <x-inputs.group class="col-md-6">
+            <x-inputs.select
+                name="jenisAlat_id"
+                label="Jenis Peralatan"
+                required
+            >
+                @php $selected = old('jenis_alat_id', ($editing ? $pemeliharaan2->alat_telemetri_id : '')) @endphp
+                <option disabled {{ empty($selected) ? 'selected' : '' }}>Pilih Jenis Alat Telemetri</option>
+                @foreach($jenisAlat as $value => $label)
                 <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
                 @endforeach
             </x-inputs.select>

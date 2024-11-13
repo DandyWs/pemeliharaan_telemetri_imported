@@ -8,6 +8,8 @@ use App\Models\Pemeliharaan;
 use Illuminate\Http\Request;
 use App\Models\PeralatanTelemetri;
 use App\Models\Komponen2;
+use App\Models\AlatTelemetri;
+use App\Models\JenisAlat;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\PemeliharaanStoreRequest;
 use App\Http\Requests\PemeliharaanUpdateRequest;
@@ -43,12 +45,13 @@ class PemeliharaanController extends Controller
         $this->authorize('create', Pemeliharaan::class);
 
         $users = User::pluck('name', 'id');
-        $peralatanTelemetris = PeralatanTelemetri::pluck('namaAlat', 'id');
+        $alatTelemetri = AlatTelemetri::pluck('lokasiStasiun', 'id');
+        $jenisAlat = JenisAlat::pluck('namajenis', 'id');
         $komponen2 = Komponen2::pluck('nama', 'id');
         $detailKomponen = DetailKomponen::all();
         return view(
             'app.pemeliharaans.create',
-            compact('users', 'peralatanTelemetris','komponen2','detailKomponen')
+            compact('users', 'alatTelemetri','komponen2','detailKomponen', 'jenisAlat')
         );
     }
 
