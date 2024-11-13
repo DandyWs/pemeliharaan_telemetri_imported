@@ -108,9 +108,9 @@
             
         </div>
         @endforeach
-        {{-- @if (!$pemeliharaan->hasBeenSigned()) --}}
-            {{-- <form action="{{ $pemeliharaan->getSignatureRoute() }}" method="POST">
-                @csrf --}}
+        <!-- {{-- @if (!$pemeliharaan->hasBeenSigned()) --}} -->
+            <!-- {{-- <form action="{{ $pemeliharaan->getSignatureRoute() }}" method="POST">
+                @csrf --}} -->
                 <div style="text-align: center">
                     <x-creagia-signature-pad
                         border-color="#eaeaea"
@@ -121,7 +121,7 @@
                         :disabled-without-signature="true"
                     />
                 </div>
-            {{-- </form> --}}
+            <!-- {{-- </form> --}} -->
             <script src="{{ asset('vendor/sign-pad/sign-pad.min.js') }}"></script>
-        {{-- @endif --}}
+        <!-- {{-- @endif --}} -->
 </div>
