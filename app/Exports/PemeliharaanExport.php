@@ -10,12 +10,13 @@ class PemeliharaanExport implements FromCollection, WithHeadings
 {
     public function collection()
     {
-        return Pemeliharaan::all(['tanggalPemeliharan', 'waktuMulaiPemeliharan', 'periodePemeliharaan', 'cuaca', 'no_AlatUkur', 'no_GSM', 'user_id', 'peralatan_telemetri_id']);
+        return Pemeliharaan::all(['No', 'tanggalPemeliharan', 'waktuMulaiPemeliharan', 'periodePemeliharaan', 'cuaca', 'no_AlatUkur', 'no_GSM', 'user_id', 'peralatan_telemetri_id']);
     }
 
     public function headings(): array
     {
         return [
+            'No',
             'Tanggal Pemeliharaan',
             'Waktu Mulai',
             'Periode',
