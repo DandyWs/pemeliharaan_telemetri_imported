@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\JenisPeralatan;
+use App\Models\JenisAlat;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\JenisPeralatanResource;
 use App\Http\Resources\JenisPeralatanCollection;
@@ -15,11 +16,11 @@ class JenisPeralatanController extends Controller
 {
     public function index(Request $request): JenisPeralatanCollection
     {
-        $this->authorize('view-any', JenisPeralatan::class);
+        $this->authorize('view-any', JenisAlat::class);
 
         $search = $request->get('search', '');
 
-        $jenisPeralatans = JenisPeralatan::search($search)
+        $jenisPeralatans = JenisAlat::search($search)
             ->latest()
             ->paginate();
 
@@ -29,18 +30,18 @@ class JenisPeralatanController extends Controller
     public function store(
         JenisPeralatanStoreRequest $request
     ): JenisPeralatanResource {
-        $this->authorize('create', JenisPeralatan::class);
+        $this->authorize('create', JenisAlat::class);
 
         $validated = $request->validated();
 
-        $jenisPeralatan = JenisPeralatan::create($validated);
+        $jenisPeralatan = JenisAlat::create($validated);
 
         return new JenisPeralatanResource($jenisPeralatan);
     }
 
     public function show(
         Request $request,
-        JenisPeralatan $jenisPeralatan
+        JenisAlat $jenisPeralatan
     ): JenisPeralatanResource {
         $this->authorize('view', $jenisPeralatan);
 
@@ -49,7 +50,7 @@ class JenisPeralatanController extends Controller
 
     public function update(
         JenisPeralatanUpdateRequest $request,
-        JenisPeralatan $jenisPeralatan
+        JenisAlat $jenisPeralatan
     ): JenisPeralatanResource {
         $this->authorize('update', $jenisPeralatan);
 
@@ -62,7 +63,7 @@ class JenisPeralatanController extends Controller
 
     public function destroy(
         Request $request,
-        JenisPeralatan $jenisPeralatan
+        JenisAlat $jenisPeralatan
     ): Response {
         $this->authorize('delete', $jenisPeralatan);
 

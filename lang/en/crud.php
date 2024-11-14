@@ -71,13 +71,14 @@ return [
 
     'jenis_peralatans' => [
         'name' => 'Jenis Peralatans',
-        'index_title' => 'JenisPeralatans List',
+        'index_title' => 'Jenis Peralatan List',
         'new_title' => 'New Jenis peralatan',
-        'create_title' => 'Create JenisPeralatan',
-        'edit_title' => 'Edit JenisPeralatan',
-        'show_title' => 'Show JenisPeralatan',
+        'create_title' => 'Create Jenis Peralatan',
+        'edit_title' => 'Edit Jenis Peralatan',
+        'show_title' => 'Show Jenis Peralatan',
         'inputs' => [
-            'namaJenisAlat' => 'Nama Jenis Alat',
+            'namajenis' => 'Nama Jenis Alat',
+            'setting' => 'Setting',
         ],
     ],
 

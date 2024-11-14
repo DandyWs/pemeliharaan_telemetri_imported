@@ -10,6 +10,7 @@ use App\Models\AlatTelemetri;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\PeralatanTelemetriStoreRequest;
 use App\Http\Requests\PeralatanTelemetriUpdateRequest;
+use App\Models\JenisAlat;
 
 class PeralatanTelemetriController extends Controller
 {
@@ -38,9 +39,9 @@ class PeralatanTelemetriController extends Controller
      */
     public function create(Request $request): View
     {
-        $this->authorize('create', PeralatanTelemetri::class);
+        $this->authorize('create', AlatTelemetri::class);
 
-        $jenisPeralatans = JenisPeralatan::pluck('namaJenisAlat', 'id');
+        $jenisPeralatans = JenisAlat::pluck('namajenis', 'id');
 
         return view(
             'app.peralatan_telemetris.create',
@@ -54,11 +55,11 @@ class PeralatanTelemetriController extends Controller
     public function store(
         PeralatanTelemetriStoreRequest $request
     ): RedirectResponse {
-        $this->authorize('create', PeralatanTelemetri::class);
+        $this->authorize('create', AlatTelemetri::class);
 
         $validated = $request->validated();
 
-        $peralatanTelemetri = PeralatanTelemetri::create($validated);
+        $peralatanTelemetri = AlatTelemetri::create($validated);
 
         return redirect()
             ->route('peralatan-telemetris.edit', $peralatanTelemetri)
@@ -89,7 +90,7 @@ class PeralatanTelemetriController extends Controller
     ): View {
         $this->authorize('update', $peralatanTelemetri);
 
-        $jenisPeralatans = JenisPeralatan::pluck('namaJenisAlat', 'id');
+        $jenisPeralatans = JenisAlat::pluck('namajenis', 'id');
 
         return view(
             'app.peralatan_telemetris.edit',

@@ -20,7 +20,8 @@ class JenisPeralatanUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'namaJenisAlat' => ['required', 'max:255', 'string'],
+            'namajenis' => ['required', 'max:255', 'string'],
+            'setting' => ['required', 'boolean'],
         ];
     }
 }

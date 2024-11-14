@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Requests;
+use App\Models\JenisAlat;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -20,7 +21,8 @@ class JenisPeralatanStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'namaJenisAlat' => ['required', 'max:255', 'string'],
+            'namajenis' => ['required', 'max:255', 'string'],
+            'setting' => ['required', 'boolean'],
         ];
     }
 }

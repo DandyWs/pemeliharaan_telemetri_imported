@@ -37,7 +37,7 @@ class JenisPeralatanController extends Controller
      */
     public function create(Request $request): View
     {
-        $this->authorize('create', JenisPeralatan::class);
+        $this->authorize('create', JenisAlat::class);
 
         return view('app.jenis_peralatans.create');
     }
@@ -47,11 +47,11 @@ class JenisPeralatanController extends Controller
      */
     public function store(JenisPeralatanStoreRequest $request): RedirectResponse
     {
-        $this->authorize('create', JenisPeralatan::class);
+        $this->authorize('create', JenisAlat::class);
 
         $validated = $request->validated();
 
-        $jenisPeralatan = JenisPeralatan::create($validated);
+        $jenisPeralatan = JenisAlat::create($validated);
 
         return redirect()
             ->route('jenis-peralatans.edit', $jenisPeralatan)
@@ -61,7 +61,7 @@ class JenisPeralatanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Request $request, JenisPeralatan $jenisPeralatan): View
+    public function show(Request $request, JenisAlat $jenisPeralatan): View
     {
         $this->authorize('view', $jenisPeralatan);
 
@@ -71,7 +71,7 @@ class JenisPeralatanController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Request $request, JenisPeralatan $jenisPeralatan): View
+    public function edit(Request $request, JenisAlat $jenisPeralatan): View
     {
         $this->authorize('update', $jenisPeralatan);
 
@@ -83,7 +83,7 @@ class JenisPeralatanController extends Controller
      */
     public function update(
         JenisPeralatanUpdateRequest $request,
-        JenisPeralatan $jenisPeralatan
+        JenisAlat $jenisPeralatan
     ): RedirectResponse {
         $this->authorize('update', $jenisPeralatan);
 
@@ -98,10 +98,10 @@ class JenisPeralatanController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     */
-    public function destroy(
+     */    
+     public function destroy(
         Request $request,
-        JenisPeralatan $jenisPeralatan
+        JenisAlat $jenisPeralatan
     ): RedirectResponse {
         $this->authorize('delete', $jenisPeralatan);
 

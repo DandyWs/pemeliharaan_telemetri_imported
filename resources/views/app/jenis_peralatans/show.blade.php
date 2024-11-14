@@ -13,8 +13,8 @@
 
             <div class="mt-4">
                 <div class="mb-4">
-                    <h5>@lang('crud.jenis_peralatans.inputs.namaJenisAlat')</h5>
-                    <span>{{ $jenisPeralatan->namaJenisAlat ?? '-' }}</span>
+                    <h5>@lang('crud.jenis_peralatans.inputs.namajenis')</h5>
+                    <span>{{ $jenisPeralatan->namajenis ?? '-' }}</span>
                 </div>
             </div>
 
@@ -27,7 +27,7 @@
                     @lang('crud.common.back')
                 </a>
 
-                @can('create', App\Models\JenisPeralatan::class)
+                @can('create', App\Models\JenisAlat::class)
                 <a
                     href="{{ route('jenis-peralatans.create') }}"
                     class="btn btn-light"
