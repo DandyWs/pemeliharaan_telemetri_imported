@@ -27,4 +27,17 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    function render($request, Throwable $exception)
+{
+        if ($this->isHttpException($exception)) {
+            if ($exception instanceof \Symfony\Component\HttpKernel\Exception\HttpException && $exception->getStatusCode() == 404) {
+                return response()->view('errors.404', [], 404);
+            }
+            if ($exception instanceof \Symfony\Component\HttpKernel\Exception\HttpException && $exception->getStatusCode() == 403) {
+                return response()->view('errors.403', [], 403);
+            }
+        }
+        return parent::render($request, $exception);
+    	}
 }
