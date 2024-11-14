@@ -420,7 +420,7 @@ main #code-error h1 {
 			<div class="ball">0</div>
 		</div>
 		<div class='line line-3'>
-			<div class="ball">3</div>
+			<div class="ball">4</div>
 		</div>
 		<div id="server">
 			<div class="eye eye-left"><span></span></div>
