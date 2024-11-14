@@ -2,7 +2,7 @@
     <div class="container">
 
         <a class="navbar-brand text-primary font-weight-bold text-uppercase" href="{{ url('/') }}">
-            Jasa Tirta I
+        <img src="https://jasatirta1.co.id/wp-content/uploads/2022/01/az-1-1.png" alt="Logo" class="img-fluid mx-auto d-block" width="150" height="150">
         </a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
