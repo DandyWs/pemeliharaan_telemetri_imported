@@ -69,96 +69,39 @@
   <!-- Modal Detail-->
     <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="detailModalLabel">Detail
-                    {{-- {{ auth()->user()->name }} --}}
-                </h5>
-            </div>
-            <div class="modal-body">
-                <div class="d-flex justify-content-center">
-                    <div class="image-preview">
-                        {{-- @if (Auth::user()->name == "admin") --}}
-                            <img src="assets/dist/img/profile.png" class="rounded-circle" width="100px" alt="User Image">
-                        {{-- @elseif(Auth::user()->name== "nasabah")
-                            @if (empty($mekanik->foto))
-                                <img src="assets/dist/img/profile.png" class="" alt="User Image" width="100px">
-                            @else
-                                <img src="{{asset('storage/nasabahprofile/'.$mekanik->foto)}}" class="img-thumbnail" alt="User Image">
-                            @endif
-                        @else
-                            @if (empty($manager->foto))
-                                <img src="assets/dist/img/profile.png" class="" alt="User Image" width="40px">
-                            @else
-                                <img src="{{asset('storage/sopirprofile/'.$manager->foto)}}" class="elevation-2 img-fluid img-thumbnail rounded-circle" width="40px" alt="User Image">
-                            @endif --}}
-                        {{-- @endif --}}
-                    </div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModalLabel">Detail {{ Auth::user()->name }}</h5>
                 </div>
-                {{-- @if (Auth::user()->name == "admin") --}}
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                      <div class="d-flex justify-content-between align-items-center">
-                          <b>Nama</b>
-                          <span>
-                            {{-- {{ auth()->user()->name }} --}}
-                          </span>
-                      </div>
-                  </li>
-                  <li class="list-group-item">
-                      <div class="d-flex justify-content-between align-items-center">
-                          <b>Email</b>
-                          <span>
-                            {{-- {{ auth()->user()->email }} --}}
-                          </span>
-                      </div>
-                  </li>
-                </ul>
-                {{-- @elseif (Auth::user()->name == "manager") --}}
-                {{-- <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                      <div class="d-flex justify-content-between align-items-center">
-                          <b>Nama</b>
-                          <span>
-                            {{ Auth::user()->manager->nama }}
-                          </span>
-                      </div>
-                  </li>
-                  <li class="list-group-item">
-                      <div class="d-flex justify-content-between align-items-center">
-                          <b>Email</b>
-                          <span>
-                            {{ Auth::user()->manager->email }}
-                          </span>
-                      </div>
-                  </li>
-                </ul>
-                @else
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                      <div class="d-flex justify-content-between align-items-center">
-                          <b>Nama</b>
-                          <span>
-                            {{ ->mekanik->nama }}
-                          </span>
-                      </div>
-                  </li>
-                  <li class="list-group-item">
-                      <div class="d-flex justify-content-between align-items-center">
-                          <b>Email</b>
-                          <span>
-                            {{ ->mekanik->email }}
-                          </span>
-                      </div>
-                  </li>
-              </ul>
-              @endif --}}
-
-            </div>
-            <div class="modal-footer">
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center">
+                        <div class="image-preview">
+                            @if (empty(Auth::user()->profile_photo_path))
+                                <img src="{{ asset('img/profile.png') }}" class="rounded-circle" width="100px" alt="User Image">
+                            @else
+                                <img src="{{ asset('storage/profiles/' . Auth::user()->profile_photo_path) }}" class="rounded-circle" width="100px" alt="User Image">
+                            @endif
+                        </div>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <b>Nama</b>
+                                <span>{{ Auth::user()->name }}</span>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <b>Email</b>
+                                <span>{{ Auth::user()->email }}</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-sm btn-danger" data-dismiss="modal">Tutup</button>
+                </div>
             </div>
-        </div>
         </div>
     </div>
 
@@ -215,5 +158,6 @@
     </div>
   </div>
  </div>
+
 
 </nav>
