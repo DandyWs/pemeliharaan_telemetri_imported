@@ -55,7 +55,7 @@
                                                     <p>User</p>
                                                 </div>
                                                 <div class="icon d-flex align-items-center justify-content-center">
-                                                    <i class="nav-icon icon ion-md-users" style="font-size: 2.5rem;"></i>
+                                                    <i class="nav-icon icon ion-md-person" style="font-size: 2.5rem;"></i>
                                                 </div>
                                                 <a href="{{ url('/users') }}" class="small-box-footer">More info <i class="nav-icon icon ion-md-arrow-forward" style="font-size: 1.5rem;"></i></a>
                                             </div>
@@ -95,7 +95,7 @@
                                                     <p>Jumlah Alat</p>
                                                 </div>
                                                 <div class="icon d-flex align-items-center justify-content-center">
-                                                    <i class="nav-icon icon ion-md-calendar" style="font-size: 2.5rem;"></i>
+                                                    <i class="nav-icon icon ion-md-settings" style="font-size: 2.5rem;"></i>
                                                 </div>
                                                 <a href="{{ url('/peralatan-telemetris') }}" class="small-box-footer">More info <i class="nav-icon icon ion-md-arrow-forward" style="font-size: 1.5rem;"></i></a>
                                             </div>
