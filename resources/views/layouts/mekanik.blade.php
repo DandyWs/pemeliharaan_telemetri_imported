@@ -128,7 +128,7 @@
                                                     <tbody>
                                                         @forelse ($pemeliharaans as $index => $pemeliharaan)
                                                             <tr>
-                                                                <td>{{ $index + 1 }}</td>
+                                                                <td>{{ $loop->iteration }}</td>
                                                                 <td>{{ $pemeliharaan->tanggalPemeliharan ?? '-' }}</td>
                                                                 <td>{{ $pemeliharaan->periodePemeliharaan ?? '-' }}</td>
                                                                 <td>{{ $pemeliharaan->cuaca ?? '-' }}</td>
