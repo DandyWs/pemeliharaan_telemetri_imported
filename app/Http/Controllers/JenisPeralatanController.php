@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Models\JenisPeralatan;
+use App\Models\JenisAlat;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\JenisPeralatanStoreRequest;
 use App\Http\Requests\JenisPeralatanUpdateRequest;
@@ -16,11 +17,11 @@ class JenisPeralatanController extends Controller
      */
     public function index(Request $request): View
     {
-        $this->authorize('view-any', JenisPeralatan::class);
+        $this->authorize('view-any', JenisAlat::class);
 
         $search = $request->get('search', '');
 
-        $jenisPeralatans = JenisPeralatan::search($search)
+        $jenisPeralatans = JenisAlat::search($search)
             ->latest()
             ->paginate(5)
             ->withQueryString();

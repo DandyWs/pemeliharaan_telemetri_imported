@@ -42,7 +42,7 @@
             <b>Peralatan Telemetri List</b>
         </div>
         <div class="row d-flex justify-between" style="width: 100%; justify-content: space-between; align-items: center; margin: 0">
-            <form class="form" method="GET" action="@lang('crud.forms.index_title')" class="col-md-4" style="padding: 0">
+            <form class="form" method="GET" action="@lang('crud.forms.index_title')" class="col-md-4" style="width: 100%; padding: 0">
               <div class="form-group w-100 mb-3">
               </div>
         <div class="card-body">
@@ -53,19 +53,10 @@
                         <tr>
                             <th>No</th>
                             <th class="text-left">
-                                @lang('crud.peralatan_telemetris.inputs.namaAlat')
+                                Lokasi Stasiun
                             </th>
                             <th class="text-left">
-                                @lang('crud.peralatan_telemetris.inputs.serialNumber')
-                            </th>
-                            <th class="text-left">
-                                @lang('crud.peralatan_telemetris.inputs.lokasiStasiun')
-                            </th>
-                            <th class="text-left">
-                                @lang('crud.peralatan_telemetris.inputs.jenis_peralatan_id')
-                            </th>
-                            <th class="text-center">
-                                @lang('crud.common.actions')
+                                Jenis Alat
                             </th>
                         </tr>
                     </thead>
@@ -73,16 +64,12 @@
                         @forelse($peralatanTelemetris as $peralatanTelemetri)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $peralatanTelemetri->namaAlat ?? '-' }}</td>
-                            <td>
-                                {{ $peralatanTelemetri->serialNumber ?? '-' }}
-                            </td>
                             <td>
                                 {{ $peralatanTelemetri->lokasiStasiun ?? '-' }}
                             </td>
                             <td>
                                 {{
-                                optional($peralatanTelemetri->jenisPeralatan)->namaJenisAlat
+                                optional($peralatanTelemetri->jenisAlat)->namajenis
                                 ?? '-' }}
                             </td>
                             <td class="text-center" style="width: 134px;">

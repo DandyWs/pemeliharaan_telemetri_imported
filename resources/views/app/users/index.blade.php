@@ -39,11 +39,10 @@
             <b>User List</b>
         </div>
         <div class="row d-flex justify-between" style="width: 100%; justify-content: space-between; align-items: center; margin: 0">
-            <form class="form" method="GET" action="@lang('crud.forms.index_title')" class="col-md-4" style="padding: 0">
+            <form class="form" method="GET" action="@lang('crud.forms.index_title')" class="col-md-4" style="width: 100%; padding: 0">
               <div class="form-group w-100 mb-3">
               </div>
         <div class="card-body">
-
 
             <div class="table-responsive">
                 <table class="table table-bordered table-striped">
@@ -123,7 +122,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="3">{!! $users->render() !!}</td>
+                            <td colspan="5">{!! $users->render() !!}</td>
                         </tr>
                     </tfoot>
                 </table>

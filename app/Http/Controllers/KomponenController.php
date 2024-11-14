@@ -6,6 +6,8 @@ use App\Models\Komponen;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Models\PeralatanTelemetri;
+use App\Models\AlatTelemetri;
+use App\Models\Komponen2;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\KomponenStoreRequest;
 use App\Http\Requests\KomponenUpdateRequest;
@@ -17,11 +19,11 @@ class KomponenController extends Controller
      */
     public function index(Request $request): View
     {
-        $this->authorize('view-any', Komponen::class);
+        $this->authorize('view-any', Komponen2::class);
 
         $search = $request->get('search', '');
 
-        $komponens = Komponen::search($search)
+        $komponens = Komponen2::search($search)
             ->latest()
             ->paginate(5)
             ->withQueryString();

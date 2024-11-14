@@ -42,7 +42,7 @@
             <b>Komponen List</b>
         </div>
         <div class="row d-flex justify-between" style="width: 100%; justify-content: space-between; align-items: center; margin: 0">
-            <form class="form" method="GET" action="@lang('crud.forms.index_title')" class="col-md-4" style="padding: 0">
+            <form class="form" method="GET" action="@lang('crud.forms.index_title')" class="col-md-4" style="width: 100%; padding: 0">
               <div class="form-group w-100 mb-3">
               </div>
         <div class="card-body">
@@ -54,35 +54,11 @@
                         <tr>
                             <th>No</th>
                             <th class="text-left">
-                                @lang('crud.komponens.inputs.namaKomponen')
+                                @lang('crud.komponens.inputs.nama')
                             </th>
-                            <th class="text-left">
-                                @lang('crud.komponens.inputs.indikatorLED')
-                            </th>
-                            <th class="text-left">
-                                @lang('crud.komponens.inputs.simCard')
-                            </th>
-                            <th class="text-left">
-                                @lang('crud.komponens.inputs.kondisiAlat')
-                            </th>
-                            <th class="text-left">
-                                @lang('crud.komponens.inputs.sambunganKabel')
-                            </th>
-                            <th class="text-left">
-                                @lang('crud.komponens.inputs.perawatanSonde')
-                            </th>
-                            <th class="text-left">
-                                @lang('crud.komponens.inputs.testDanSettingRTC')
-                            </th>
-                            <th class="text-left">
-                                @lang('crud.komponens.inputs.levelAirAki')
-                            </th>
-                            <th class="text-left">
-                                @lang('crud.komponens.inputs.teganganBateraiAki')
-                            </th>
-                            <th class="text-left">
+                            {{-- <th class="text-left">
                                 @lang('crud.komponens.inputs.peralatan_telemetri_id')
-                            </th>
+                            </th> --}}
                             <th class="text-center">
                                 @lang('crud.common.actions')
                             </th>
@@ -92,20 +68,12 @@
                         @forelse($komponens as $komponen)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $komponen->namaKomponen ?? '-' }}</td>
-                            <td>{{ $komponen->indikatorLED ?? '-' }}</td>
-                            <td>{{ $komponen->simCard ?? '-' }}</td>
-                            <td>{{ $komponen->kondisiAlat ?? '-' }}</td>
-                            <td>{{ $komponen->sambunganKabel ?? '-' }}</td>
-                            <td>{{ $komponen->perawatanSonde ?? '-' }}</td>
-                            <td>{{ $komponen->testDanSettingRTC ?? '-' }}</td>
-                            <td>{{ $komponen->levelAirAki ?? '-' }}</td>
-                            <td>{{ $komponen->teganganBateraiAki ?? '-' }}</td>
-                            <td>
+                            <td>{{ $komponen->nama ?? '-' }}</td>
+                            {{-- <td>
                                 {{
                                 optional($komponen->peralatanTelemetri)->namaAlat
                                 ?? '-' }}
-                            </td>
+                            </td> --}}
                             <td class="text-center" style="width: 134px;">
                                 <div
                                     role="group"

@@ -42,19 +42,19 @@
             <b>Jenis Peralatan List</b>
         </div>
         <div class="row d-flex justify-between" style="width: 100%; justify-content: space-between; align-items: center; margin: 0">
-            <form class="form" method="GET" action="@lang('crud.forms.index_title')" class="col-md-4" style="padding: 0">
+            <form class="form" method="GET" action="@lang('crud.forms.index_title')" class="col-md-4" style="width: 100%; padding: 0">
               <div class="form-group w-100 mb-3">
               </div>
         <div class="card-body">
 
 
             <div class="table-responsive">
-                <table class="table table-bordered table-striped">
+                <table class="table table-bordered table-striped" style="align-items: center;">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th class="text-left">
-                                @lang('crud.jenis_peralatans.inputs.namaJenisAlat')
+                            <th class="text-center">No</th>
+                            <th class="text-center">
+                                Jenis Peralatan
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -64,8 +64,8 @@
                     <tbody>
                         @forelse($jenisPeralatans as $jenisPeralatan)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $jenisPeralatan->namaJenisAlat ?? '-' }}</td>
+                            <td class="text-center">{{ $loop->iteration }}</td>
+                            <td class="text-center">{{ $jenisPeralatan->namajenis ?? '-' }}</td>
                             <td class="text-center" style="width: 134px;">
                                 <div
                                     role="group"

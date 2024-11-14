@@ -98,22 +98,13 @@ return [
 
     'komponens' => [
         'name' => 'Komponens',
-        'index_title' => 'Komponens List',
+        'index_title' => 'Komponen List',
         'new_title' => 'New Komponen',
         'create_title' => 'Create Komponen',
         'edit_title' => 'Edit Komponen',
         'show_title' => 'Show Komponen',
         'inputs' => [
-            'namaKomponen' => 'Nama Komponen',
-            'indikatorLED' => 'Indikator Led',
-            'simCard' => 'Sim Card',
-            'kondisiAlat' => 'Kondisi Alat',
-            'sambunganKabel' => 'Sambungan Kabel',
-            'perawatanSonde' => 'Perawatan Sonde',
-            'testDanSettingRTC' => 'Test Dan Setting Rtc',
-            'levelAirAki' => 'Level Air Aki',
-            'teganganBateraiAki' => 'Tegangan Baterai Aki',
-            'peralatan_telemetri_id' => 'Peralatan Telemetri',
+            'nama' => 'Nama Komponen',
         ],
     ],
 

@@ -6,6 +6,7 @@ use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Models\JenisPeralatan;
 use App\Models\PeralatanTelemetri;
+use App\Models\AlatTelemetri;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\PeralatanTelemetriStoreRequest;
 use App\Http\Requests\PeralatanTelemetriUpdateRequest;
@@ -17,11 +18,11 @@ class PeralatanTelemetriController extends Controller
      */
     public function index(Request $request): View
     {
-        $this->authorize('view-any', PeralatanTelemetri::class);
+        $this->authorize('view-any', AlatTelemetri::class);
 
         $search = $request->get('search', '');
 
-        $peralatanTelemetris = PeralatanTelemetri::search($search)
+        $peralatanTelemetris = AlatTelemetri::search($search)
             ->latest()
             ->paginate(5)
             ->withQueryString();
