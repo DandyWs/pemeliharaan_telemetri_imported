@@ -44,28 +44,26 @@
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
                 <div class="text-center">
                     @if (empty(Auth::user()->profile_photo_path))
-                        <img src="assets/dist/img/profile.png" alt="Profile" class="rounded-circle" style="width: 80px; height: 80px;">
+                        <img src="{{ asset('img/profile.png') }}" alt="Profile" class="rounded-circle" style="width: 80px; height: 80px;">
                     @else
-                        <img src="{{ asset('storage/profiles/' . Auth::user()->profile_photo_path) }}" class="rounded-circle" style="width: 80px; height: 80px;" alt="">
+                        <img src="{{ asset('storage/profiles/' . Auth::user()->profile_photo_path) }}" class="rounded-circle" style="width: 80px; height: 80px;" alt="User Image">
                     @endif
                     <h5>{{ Auth::user()->name }}</h5>
                     <p>{{ Auth::user()->email }}</p>
                 </div>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" data-toggle="modal" data-target="#detailModal">
-                    <i class="fas fa-info-circle mr-2"></i> Detail
+                    <i class="nav-icon icon ion-md-eye"></i> Detail
                 </a>
                 <a class="dropdown-item" href="edit_profile.php">
-                    <i class="fas fa-edit mr-2"></i> Edit
+                    <i class="nav-icon icon ion-md-create"></i> Edit
                 </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
             </div>
         </li>
         @endguest
         </ul>
     </div>
+
   <!-- Modal Detail-->
     <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
