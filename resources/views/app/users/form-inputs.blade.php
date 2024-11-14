@@ -28,6 +28,9 @@
 
         <div>
             <select id="role" name="role" class="form-control @error('role') is-invalid @enderror" required autocomplete="role">
+                @if (auth()->user()->role == 'admin')
+                    <option value="admin">Admin</option>
+                @endif
                 <option value="mekanik">Mekanik</option>
                 <option value="manager">Ka. Tim Kalibrasi Divisi</option>
             </select>

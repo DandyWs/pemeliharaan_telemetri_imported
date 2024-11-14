@@ -52,10 +52,10 @@
                     <p>{{ Auth::user()->email }}</p>
                 </div>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" data-toggle="modal" data-target="#detailModal">
+                <a class="dropdown-item" href="{{ route('users.show', Auth::user()->id) }}">
                     <i class="nav-icon icon ion-md-eye"></i> Detail
                 </a>
-                <a class="dropdown-item" href="edit_profile.php">
+                <a class="dropdown-item" href="{{ route('users.edit', Auth::user()->id) }}">
                     <i class="nav-icon icon ion-md-create"></i> Edit
                 </a>
                 <a class="dropdown-item btn btn-success" data-toggle="modal" href="{{ route('logout') }}"
