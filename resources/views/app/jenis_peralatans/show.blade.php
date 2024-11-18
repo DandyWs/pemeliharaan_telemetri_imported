@@ -27,7 +27,7 @@
                     @lang('crud.common.back')
                 </a>
 
-                @can('create', App\Models\JenisAlat::class)
+                @can('create', App\Models\JenisAlat2::class)
                 <a
                     href="{{ route('jenis-peralatans.create') }}"
                     class="btn btn-light"

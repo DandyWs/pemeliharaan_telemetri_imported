@@ -3,16 +3,16 @@
 <div class="row">
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
-            name="namaKomponen"
+            name="nama"
             label="Nama Komponen"
-            :value="old('namaKomponen', ($editing ? $komponen->namaKomponen : ''))"
+            :value="old('nama', ($editing ? $komponen->nama : ''))"
             maxlength="255"
             placeholder="Nama Komponen"
             required
         ></x-inputs.text>
     </x-inputs.group>
 
-    <x-inputs.group class="col-sm-12">
+    {{-- <x-inputs.group class="col-sm-12">
         <x-inputs.checkbox
             name="indikatorLED"
             label="Indikator Led"
@@ -90,5 +90,5 @@
             <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
             @endforeach
         </x-inputs.select>
-    </x-inputs.group>
+    </x-inputs.group> --}}
 </div>

@@ -20,19 +20,19 @@ class KomponenUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'namaKomponen' => ['required', 'max:255', 'string'],
-            'indikatorLED' => ['nullable', 'boolean'],
-            'simCard' => ['nullable', 'boolean'],
-            'kondisiAlat' => ['nullable', 'boolean'],
-            'sambunganKabel' => ['nullable', 'boolean'],
-            'perawatanSonde' => ['nullable', 'boolean'],
-            'testDanSettingRTC' => ['nullable', 'boolean'],
-            'levelAirAki' => ['nullable', 'boolean'],
-            'teganganBateraiAki' => ['nullable', 'max:255'],
-            'peralatan_telemetri_id' => [
-                'required',
-                'exists:peralatan_telemetris,id',
-            ],
+            'nama' => ['required', 'max:255', 'string'],
+            // 'indikatorLED' => ['nullable', 'boolean'],
+            // 'simCard' => ['nullable', 'boolean'],
+            // 'kondisiAlat' => ['nullable', 'boolean'],
+            // 'sambunganKabel' => ['nullable', 'boolean'],
+            // 'perawatanSonde' => ['nullable', 'boolean'],
+            // 'testDanSettingRTC' => ['nullable', 'boolean'],
+            // 'levelAirAki' => ['nullable', 'boolean'],
+            // 'teganganBateraiAki' => ['nullable', 'max:255'],
+            // 'peralatan_telemetri_id' => [
+            //     'required',
+            //     'exists:peralatan_telemetris,id',
+            // ],
         ];
     }
 }

@@ -20,10 +20,8 @@ class PeralatanTelemetriStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'namaAlat' => ['required', 'max:255', 'string'],
-            'serialNumber' => ['required', 'max:255', 'string'],
             'lokasiStasiun' => ['required', 'max:255', 'string'],
-            'jenis_peralatan_id' => ['required', 'exists:jenis_peralatans,id'],
+            'jenis_alat_id' => ['required', 'exists:jenis_alats,id'],
         ];
     }
 }

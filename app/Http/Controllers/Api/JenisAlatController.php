@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\JenisAlatResource;
-use App\Http\Resources\JenisAlatCollection;
+use App\Http\Resources\JenisAlatCollection; // Ensure this class exists in the specified namespace
 use App\Http\Requests\JenisAlatStoreRequest;
 use App\Http\Requests\JenisAlatUpdateRequest;
 

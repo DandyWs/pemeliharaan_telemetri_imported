@@ -3,9 +3,9 @@
 <div class="row">
         <x-inputs.group class="col-md-6">
             <x-inputs.datetime
-                name="tanggalPemeliharan"
+                name="tanggal"
                 label="Tanggal Pemeliharan"
-                value="{{ old('tanggalPemeliharan', ($editing ? optional($pemeliharaan->tanggalPemeliharan)->format('Y-m-d\TH:i:s') : '')) }}"
+                value="{{ old('tanggal', ($editing ? optional($pemeliharaan->tanggal)->format('Y-m-d\TH:i:s') : '')) }}"
                 max="255"
                 required
             ></x-inputs.datetime>
@@ -13,9 +13,9 @@
 
         <x-inputs.group class="col-md-6">
             <x-inputs.datetime
-                name="waktuMulaiPemeliharan"
+                name="waktu"
                 label="Waktu Mulai Pemeliharan"
-                value="{{ old('waktuMulaiPemeliharan', ($editing ? optional($pemeliharaan->waktuMulaiPemeliharan)->format('Y-m-d\TH:i:s') : '')) }}"
+                value="{{ old('waktu', ($editing ? optional($pemeliharaan->waktu)->format('Y-m-d\TH:i:s') : '')) }}"
                 max="255"
                 required
             ></x-inputs.datetime>
@@ -23,9 +23,9 @@
 
         <x-inputs.group class="col-md-6">
             <x-inputs.text
-                name="periodePemeliharaan"
+                name="periode"
                 label="Periode Pemeliharaan"
-                :value="old('periodePemeliharaan', ($editing ? $pemeliharaan->periodePemeliharaan : ''))"
+                :value="old('periode', ($editing ? $pemeliharaan->periode : ''))"
                 maxlength="255"
                 placeholder="Periode Pemeliharaan"
                 required
@@ -45,9 +45,9 @@
 
         <x-inputs.group class="col-md-6">
             <x-inputs.text
-                name="no_AlatUkur"
+                name="no_alatUkur"
                 label="No Alat Ukur"
-                :value="old('no_AlatUkur', ($editing ? $pemeliharaan->no_AlatUkur : ''))"
+                :value="old('no_alatUkur', ($editing ? $pemeliharaan->no_alatUkur : ''))"
                 maxlength="255"
                 placeholder="No Alat Ukur"
                 required
@@ -81,7 +81,7 @@
                 label="Lokasi Stasiun"
                 required
             >
-                @php $selected = old('alat_telemetri_id', ($editing ? $pemeliharaan2->alat_telemetri_id : '')) @endphp
+                @php $selected = old('alat_telemetri_id', ($editing ? $pemeliharaan->alat_telemetri_id : '')) @endphp
                 <option disabled {{ empty($selected) ? 'selected' : '' }}>Pilih Lokasi Stasiun</option>
                 @foreach($alatTelemetri as $value => $label)
                 <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
@@ -91,11 +91,11 @@
 
         <x-inputs.group class="col-md-6">
             <x-inputs.select
-                name="jenisAlat_id"
+                name="jenis_alat_id"
                 label="Jenis Peralatan"
                 required
             >
-                @php $selected = old('jenis_alat_id', ($editing ? $pemeliharaan2->alat_telemetri_id : '')) @endphp
+                @php $selected = old('jenis_alat_id', ($editing ? $pemeliharaan->alat_telemetri_id : '')) @endphp
                 <option disabled {{ empty($selected) ? 'selected' : '' }}>Pilih Jenis Alat Telemetri</option>
                 @foreach($jenisAlat as $value => $label)
                 <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>

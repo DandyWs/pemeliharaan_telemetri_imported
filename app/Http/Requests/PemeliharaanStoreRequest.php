@@ -20,16 +20,16 @@ class PemeliharaanStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'tanggalPemeliharan' => ['required', 'date'],
-            'waktuMulaiPemeliharan' => ['required', 'date'],
-            'periodePemeliharaan' => ['required', 'max:255', 'string'],
+            'tanggal' => ['required', 'date'],
+            'waktu' => ['required', 'date'],
+            'periode' => ['required', 'max:255', 'string'],
             'cuaca' => ['required', 'max:255', 'string'],
-            'no_AlatUkur' => ['required', 'max:255'],
+            'no_alatUkur' => ['required', 'max:255'],
             'no_GSM' => ['required', 'max:255'],
             'user_id' => ['required', 'exists:users,id'],
-            'peralatan_telemetri_id' => [
+            'alat_telemetri_id' => [
                 'required',
-                'exists:peralatan_telemetris,id',
+                'exists:alat_telemetris,id',
             ],
         ];
     }

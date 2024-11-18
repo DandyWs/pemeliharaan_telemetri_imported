@@ -13,10 +13,10 @@
 
             <div class="mt-4">
                 <div class="mb-4">
-                    <h5>@lang('crud.komponens.inputs.namaKomponen')</h5>
-                    <span>{{ $komponen->namaKomponen ?? '-' }}</span>
+                    <h5>@lang('crud.komponens.inputs.nama')</h5>
+                    <span>{{ $komponen->nama ?? '-' }}</span>
                 </div>
-                <div class="mb-4">
+                {{-- <div class="mb-4">
                     <h5>@lang('crud.komponens.inputs.indikatorLED')</h5>
                     <span>{{ $komponen->indikatorLED ?? '-' }}</span>
                 </div>
@@ -56,7 +56,7 @@
                         >{{ optional($komponen->peralatanTelemetri)->namaAlat ??
                         '-' }}</span
                     >
-                </div>
+                </div> --}}
             </div>
 
             <div class="mt-4">

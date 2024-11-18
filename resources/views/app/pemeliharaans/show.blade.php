@@ -14,17 +14,17 @@
             <div class="mt-4">
                 <div class="mb-4">
                     <h5>@lang('crud.forms.inputs.tanggalPemeliharan')</h5>
-                    <span>{{ $pemeliharaan->tanggalPemeliharan ?? '-' }}</span>
+                    <span>{{ $pemeliharaan->tanggal ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
                     <h5>@lang('crud.forms.inputs.waktuMulaiPemeliharan')</h5>
                     <span
-                        >{{ $pemeliharaan->waktuMulaiPemeliharan ?? '-' }}</span
+                        >{{ $pemeliharaan->waktu ?? '-' }}</span
                     >
                 </div>
                 <div class="mb-4">
                     <h5>@lang('crud.forms.inputs.periodePemeliharaan')</h5>
-                    <span>{{ $pemeliharaan->periodePemeliharaan ?? '-' }}</span>
+                    <span>{{ $pemeliharaan->periode ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
                     <h5>@lang('crud.forms.inputs.cuaca')</h5>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="mb-4">
                     <h5>@lang('crud.forms.inputs.no_AlatUkur')</h5>
-                    <span>{{ $pemeliharaan->no_AlatUkur ?? '-' }}</span>
+                    <span>{{ $pemeliharaan->no_alatUkur ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
                     <h5>@lang('crud.forms.inputs.no_GSM')</h5>
@@ -48,7 +48,15 @@
                     <h5>@lang('crud.forms.inputs.peralatan_telemetri_id')</h5>
                     <span
                         >{{
-                        optional($pemeliharaan->peralatanTelemetri)->namaAlat ??
+                        optional($pemeliharaan->alatTelemetri)->lokasiStasiun ??
+                        '-' }}</span
+                    >
+                </div>
+                <div class="mb-4">
+                    <h5>@lang('crud.forms.inputs.jenis_peralatan_id')</h5>
+                    <span
+                        >{{
+                        optional($pemeliharaan->alatTelemetri->jenisAlat)->namajenis ??
                         '-' }}</span
                     >
                 </div>

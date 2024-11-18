@@ -12,7 +12,7 @@
             </h4>
 
             <div class="mt-4">
-                <div class="mb-4">
+                {{-- <div class="mb-4">
                     <h5>@lang('crud.peralatan_telemetris.inputs.namaAlat')</h5>
                     <span>{{ $peralatanTelemetri->namaAlat ?? '-' }}</span>
                 </div>
@@ -21,7 +21,7 @@
                         @lang('crud.peralatan_telemetris.inputs.serialNumber')
                     </h5>
                     <span>{{ $peralatanTelemetri->serialNumber ?? '-' }}</span>
-                </div>
+                </div> --}}
                 <div class="mb-4">
                     <h5>
                         @lang('crud.peralatan_telemetris.inputs.lokasiStasiun')
@@ -34,7 +34,7 @@
                     </h5>
                     <span
                         >{{
-                        optional($peralatanTelemetri->jenisPeralatan)->namaJenisAlat
+                        optional($peralatanTelemetri->jenisAlat)->namajenis
                         ?? '-' }}</span
                     >
                 </div>

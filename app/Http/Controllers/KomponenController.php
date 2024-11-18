@@ -36,11 +36,11 @@ class KomponenController extends Controller
      */
     public function create(Request $request): View
     {
-        $this->authorize('create', Komponen::class);
+        $this->authorize('create', Komponen2::class);
 
-        $peralatanTelemetris = PeralatanTelemetri::pluck('namaAlat', 'id');
+        // $peralatanTelemetris = PeralatanTelemetri::pluck('namaAlat', 'id');
 
-        return view('app.komponens.create', compact('peralatanTelemetris'));
+        return view('app.komponens.create');
     }
 
     /**
@@ -48,11 +48,11 @@ class KomponenController extends Controller
      */
     public function store(KomponenStoreRequest $request): RedirectResponse
     {
-        $this->authorize('create', Komponen::class);
+        $this->authorize('create', Komponen2::class);
 
         $validated = $request->validated();
 
-        $komponen = Komponen::create($validated);
+        $komponen = Komponen2::create($validated);
 
         return redirect()
             ->route('komponens.edit', $komponen)
@@ -62,7 +62,7 @@ class KomponenController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Request $request, Komponen $komponen): View
+    public function show(Request $request, Komponen2 $komponen): View
     {
         $this->authorize('view', $komponen);
 
@@ -72,15 +72,15 @@ class KomponenController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Request $request, Komponen $komponen): View
+    public function edit(Request $request, Komponen2 $komponen): View
     {
         $this->authorize('update', $komponen);
 
-        $peralatanTelemetris = PeralatanTelemetri::pluck('namaAlat', 'id');
+        // $peralatanTelemetris = PeralatanTelemetri::pluck('namaAlat', 'id');
 
         return view(
             'app.komponens.edit',
-            compact('komponen', 'peralatanTelemetris')
+            compact('komponen')
         );
     }
 
@@ -89,7 +89,7 @@ class KomponenController extends Controller
      */
     public function update(
         KomponenUpdateRequest $request,
-        Komponen $komponen
+        Komponen2 $komponen
     ): RedirectResponse {
         $this->authorize('update', $komponen);
 
@@ -107,7 +107,7 @@ class KomponenController extends Controller
      */
     public function destroy(
         Request $request,
-        Komponen $komponen
+        Komponen2 $komponen
     ): RedirectResponse {
         $this->authorize('delete', $komponen);
 

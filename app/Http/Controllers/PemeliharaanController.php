@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\View\View;
 use App\Models\Pemeliharaan;
+use App\Models\Pemeliharaan2;
 use Illuminate\Http\Request;
 use App\Models\PeralatanTelemetri;
 use App\Models\Komponen2;
@@ -25,11 +26,11 @@ class PemeliharaanController extends Controller
      */
     public function index(Request $request): View
     {
-        $this->authorize('view-any', Pemeliharaan::class);
+        $this->authorize('view-any', Pemeliharaan2::class);
 
         $search = $request->get('search', '');
 
-        $pemeliharaans = Pemeliharaan::search($search)
+        $pemeliharaans = Pemeliharaan2::search($search)
             ->latest()
             ->paginate(5)
             ->withQueryString();
@@ -45,7 +46,7 @@ class PemeliharaanController extends Controller
      */
     public function create(Request $request): View
     {
-        $this->authorize('create', Pemeliharaan::class);
+        $this->authorize('create', Pemeliharaan2::class);
 
         $users = User::pluck('name', 'id');
         $alatTelemetri = AlatTelemetri::pluck('lokasiStasiun', 'id');
@@ -63,11 +64,11 @@ class PemeliharaanController extends Controller
      */
     public function store(PemeliharaanStoreRequest $request): RedirectResponse
     {
-        $this->authorize('create', Pemeliharaan::class);
+        $this->authorize('create', Pemeliharaan2::class);
 
         $validated = $request->validated();
 
-        $pemeliharaan = Pemeliharaan::create($validated);
+        $pemeliharaan = Pemeliharaan2::create($validated);
 
         return redirect()
             ->route('pemeliharaans.edit', $pemeliharaan)
@@ -77,7 +78,7 @@ class PemeliharaanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Request $request, Pemeliharaan $pemeliharaan): View
+    public function show(Request $request, Pemeliharaan2 $pemeliharaan): View
     {
         $this->authorize('view', $pemeliharaan);
         $komponen2 = Komponen2::pluck('nama', 'id');
@@ -95,7 +96,7 @@ class PemeliharaanController extends Controller
         $this->authorize('update', $pemeliharaan);
 
         $users = User::pluck('name', 'id');
-        $peralatanTelemetris = PeralatanTelemetri::pluck('namaAlat', 'id');
+        $peralatanTelemetris = AlatTelemetri::pluck('namaAlat', 'id');
         $komponen2 = Komponen2::all();
         $detailKomponen = DetailKomponen::all();
 
@@ -110,7 +111,7 @@ class PemeliharaanController extends Controller
      */
     public function update(
         PemeliharaanUpdateRequest $request,
-        Pemeliharaan $pemeliharaan
+        Pemeliharaan2 $pemeliharaan
     ): RedirectResponse {
         $this->authorize('update', $pemeliharaan);
 
@@ -128,7 +129,7 @@ class PemeliharaanController extends Controller
      */
     public function destroy(
         Request $request,
-        Pemeliharaan $pemeliharaan
+        Pemeliharaan2 $pemeliharaan
     ): RedirectResponse {
         $this->authorize('delete', $pemeliharaan);
 

@@ -65,7 +65,7 @@ return [
             'tanggalPemeliharan' => 'Tanggal Pemeliharan',
             'waktuMulaiPemeliharan' => 'Waktu Mulai Pemeliharan',
             'user_id' => 'User',
-            'peralatan_telemetri_id' => 'Peralatan Telemetri',
+            'peralatan_telemetri_id' => 'Lokasi Stasiun',
         ],
     ],
 
@@ -90,8 +90,8 @@ return [
         'edit_title' => 'Edit PeralatanTelemetri',
         'show_title' => 'Show PeralatanTelemetri',
         'inputs' => [
-            'namaAlat' => 'Nama Alat',
-            'serialNumber' => 'Serial Number',
+            // 'namaAlat' => 'Nama Alat',
+            // 'serialNumber' => 'Serial Number',
             'lokasiStasiun' => 'Lokasi Stasiun',
             'jenis_peralatan_id' => 'Jenis Peralatan',
         ],
@@ -141,7 +141,8 @@ return [
             'no_AlatUkur' => 'No Alat Ukur',
             'no_GSM' => 'No Gsm',
             'user_id' => 'User',
-            'peralatan_telemetri_id' => 'Peralatan Telemetri',
+            'peralatan_telemetri_id' => 'Lokasi Stasiun',
+            'jenis_peralatan_id' => 'Jenis Alat',
         ],
     ],
 ];

@@ -82,6 +82,9 @@
                             <th class="text-center  ">
                                 @lang('crud.forms.inputs.peralatan_telemetri_id')
                             </th>
+                            <th class="text-center  ">
+                                @lang('crud.forms.inputs.jenis_peralatan_id')
+                            </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
                             </th>
@@ -92,24 +95,29 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>
-                                {{ $pemeliharaan->tanggalPemeliharan ?? '-' }}
+                                {{ $pemeliharaan->tanggal ?? '-' }}
                             </td>
                             <td>
-                                {{ $pemeliharaan->waktuMulaiPemeliharan ?? '-'
+                                {{ $pemeliharaan->waktu ?? '-'
                                 }}
                             </td>
                             <td>
-                                {{ $pemeliharaan->periodePemeliharaan ?? '-' }}
+                                {{ $pemeliharaan->periode ?? '-' }}
                             </td>
                             <td>{{ $pemeliharaan->cuaca ?? '-' }}</td>
-                            <td>{{ $pemeliharaan->no_AlatUkur ?? '-' }}</td>
+                            <td>{{ $pemeliharaan->no_alatUkur ?? '-' }}</td>
                             <td>{{ $pemeliharaan->no_GSM ?? '-' }}</td>
                             <td>
                                 {{ optional($pemeliharaan->user)->name ?? '-' }}
                             </td>
                             <td>
                                 {{
-                                optional($pemeliharaan->peralatanTelemetri)->namaAlat
+                                optional($pemeliharaan->alatTelemetri)->lokasiStasiun
+                                ?? '-' }}
+                            </td>
+                            <td>
+                                {{
+                                optional($pemeliharaan->alatTelemetri->jenisAlat)->namajenis
                                 ?? '-' }}
                             </td>
                             <td class="text-center" style="width: 134px;">
@@ -160,7 +168,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="9">
+                            <td colspan="10">
                                 @lang('crud.common.no_items_found')
                             </td>
                         </tr>
@@ -168,7 +176,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="9">
+                            <td colspan="10">
                                 {!! $pemeliharaans->render() !!}
                             </td>
                         </tr>

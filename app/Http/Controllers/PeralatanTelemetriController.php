@@ -71,7 +71,7 @@ class PeralatanTelemetriController extends Controller
      */
     public function show(
         Request $request,
-        PeralatanTelemetri $peralatanTelemetri
+        AlatTelemetri $peralatanTelemetri
     ): View {
         $this->authorize('view', $peralatanTelemetri);
 
@@ -86,7 +86,7 @@ class PeralatanTelemetriController extends Controller
      */
     public function edit(
         Request $request,
-        PeralatanTelemetri $peralatanTelemetri
+        AlatTelemetri $peralatanTelemetri
     ): View {
         $this->authorize('update', $peralatanTelemetri);
 
@@ -103,7 +103,7 @@ class PeralatanTelemetriController extends Controller
      */
     public function update(
         PeralatanTelemetriUpdateRequest $request,
-        PeralatanTelemetri $peralatanTelemetri
+        AlatTelemetri $peralatanTelemetri
     ): RedirectResponse {
         $this->authorize('update', $peralatanTelemetri);
 
@@ -121,7 +121,7 @@ class PeralatanTelemetriController extends Controller
      */
     public function destroy(
         Request $request,
-        PeralatanTelemetri $peralatanTelemetri
+        AlatTelemetri $peralatanTelemetri
     ): RedirectResponse {
         $this->authorize('delete', $peralatanTelemetri);
 

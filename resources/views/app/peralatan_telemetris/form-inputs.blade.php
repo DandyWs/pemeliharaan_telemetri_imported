@@ -3,16 +3,30 @@
 <div class="row">
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
-            name="namaAlat"
-            label="Nama Alat"
-            :value="old('namaAlat', ($editing ? $peralatanTelemetri->namaAlat : ''))"
+            name="lokasiStasiun"
+            label="Lokasi Stasiun"
+            :value="old('lokasiStasiun', ($editing ? $peralatanTelemetri->lokasiStasiun : ''))"
             maxlength="255"
-            placeholder="Nama Alat"
+            placeholder="Lokasi Stasiun"
             required
         ></x-inputs.text>
     </x-inputs.group>
 
-    <x-inputs.group class="col-sm-12">
+    <x-inputs.group class="col-md-6">
+        <x-inputs.select
+            name="jenis_alat_id"
+            label="Jenis Peralatan"
+            required
+        >
+            @php $selected = old('jenis_alat_id', ($editing ? $peralatanTelemetri->jenis_alat_id : '')) @endphp
+            <option disabled {{ empty($selected) ? 'selected' : '' }}>Pilih Jenis Alat Telemetri</option>
+            @foreach($jenisPeralatans as $value => $label)
+            <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
+            @endforeach
+        </x-inputs.select>
+    </x-inputs.group>
+
+    {{-- <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="serialNumber"
             label="Serial Number"
@@ -46,5 +60,5 @@
             <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
             @endforeach
         </x-inputs.select>
-    </x-inputs.group>
+    </x-inputs.group> --}}
 </div>
