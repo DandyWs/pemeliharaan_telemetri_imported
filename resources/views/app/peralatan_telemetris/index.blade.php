@@ -58,12 +58,17 @@
                             <th class="text-left">
                                 Jenis Alat
                             </th>
+                            <th class="text-center" style="width: 134px;">
+                                @lang('crud.common.actions')
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         @forelse($peralatanTelemetris as $peralatanTelemetri)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
+                            <td>
+                                {{ $loop->iteration }}
+                            </td>
                             <td>
                                 {{ $peralatanTelemetri->lokasiStasiun ?? '-' }}
                             </td>

@@ -141,11 +141,11 @@
                                                         @forelse ($pemeliharaans as $index => $pemeliharaan)
                                                             <tr>
                                                                 <td>{{ $index + 1 }}</td>
-                                                                <td>{{ $pemeliharaan->tanggalPemeliharan ?? '-' }}</td>
-                                                                <td>{{ $pemeliharaan->periodePemeliharaan ?? '-' }}</td>
+                                                                <td>{{ $pemeliharaan->tanggal ?? '-' }}</td>
+                                                                <td>{{ $pemeliharaan->periode ?? '-' }}</td>
                                                                 <td>{{ $pemeliharaan->cuaca ?? '-' }}</td>
                                                                 <td>{{ $pemeliharaan->user->name ?? '-' }}</td>
-                                                                <td>{{ $pemeliharaan->peralatanTelemetri->namaAlat ?? '-' }}</td>
+                                                                <td>{{ $pemeliharaan->alatTelemetri->lokasiStasiun ?? '-' }}</td>
                                                             </tr>
                                                         @empty
                                                             <tr>
