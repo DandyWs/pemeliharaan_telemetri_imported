@@ -52,23 +52,23 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th class="text-left">
+                            <th class="text-center">No</th>
+                            <th class="text-center">
                                 @lang('crud.pemeriksaans.inputs.hasilPemeriksaan')
                             </th>
-                            <th class="text-left">
+                            <th class="text-center">
                                 @lang('crud.pemeriksaans.inputs.catatan')
                             </th>
-                            <th class="text-left">
+                            <th class="text-center">
                                 @lang('crud.pemeriksaans.inputs.pemeliharaan_id')
                             </th>
-                            <th class="text-left">
+                            <th class="text-center">
                                 @lang('crud.pemeriksaans.inputs.user_id')
                             </th>
-                            <th class="text-left">
+                            <th class="text-center">
                                 @lang('crud.pemeriksaans.inputs.komponen_id')
                             </th>
-                            <th class="text-left">
+                            <th class="text-center">
                                 @lang('crud.pemeriksaans.inputs.setting_id')
                             </th>
                             <th class="text-center">
@@ -79,23 +79,26 @@
                     <tbody>
                         @forelse($pemeriksaans as $pemeriksaan)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $pemeriksaan->hasilPemeriksaan ?? '-' }}</td>
-                            <td>{{ $pemeriksaan->catatan ?? '-' }}</td>
-                            <td>
+                            <td class="text-center">@php
+                                $number = ($pemeriksaans->currentPage() - 1) * $pemeriksaans->perPage() + $loop->iteration;
+                            @endphp
+                            {{ $number }}</td>
+                            <td class="text-center">{{ $pemeriksaan->hasilPemeriksaan ?? '-' }}</td>
+                            <td class="text-center">{{ $pemeriksaan->catatan ?? '-' }}</td>
+                            <td class="text-center">
                                 {{
                                 optional($pemeriksaan->pemeliharaan)->periodePemeliharaan
                                 ?? '-' }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{ optional($pemeriksaan->user)->name ?? '-' }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{
                                 optional($pemeriksaan->komponen)->namaKomponen
                                 ?? '-' }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{ optional($pemeriksaan->setting)->namaSetting
                                 ?? '-' }}
                             </td>

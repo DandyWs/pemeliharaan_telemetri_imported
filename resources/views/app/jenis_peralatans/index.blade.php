@@ -64,7 +64,10 @@
                     <tbody>
                         @forelse($jenisPeralatans as $jenisPeralatan)
                         <tr>
-                            <td class="text-center">{{ $loop->iteration }}</td>
+                            <td class="text-center">@php
+                                $number = ($jenisPeralatans->currentPage() - 1) * $jenisPeralatans->perPage() + $loop->iteration;
+                            @endphp
+                            {{ $number }}</td>
                             <td class="text-center">{{ $jenisPeralatan->namajenis ?? '-' }}</td>
                             <td class="text-center" style="width: 134px;">
                                 <div

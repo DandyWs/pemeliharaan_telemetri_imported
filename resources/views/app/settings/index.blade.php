@@ -52,23 +52,23 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th class="text-left">
+                            <th class="text-center">No</th>
+                            <th class="text-center">
                                 @lang('crud.settings.inputs.namaSetting')
                             </th>
-                            <th class="text-right">
+                            <th class="text-center">
                                 @lang('crud.settings.inputs.nilaiSebelumKalibrasi')
                             </th>
-                            <th class="text-right">
+                            <th class="text-center">
                                 @lang('crud.settings.inputs.displaySebelumKalibrasi')
                             </th>
-                            <th class="text-right">
+                            <th class="text-center">
                                 @lang('crud.settings.inputs.nilaiSetelahKalibrasi')
                             </th>
-                            <th class="text-right">
+                            <th class="text-center">
                                 @lang('crud.settings.inputs.displaySetelahKalibrasi')
                             </th>
-                            <th class="text-left">
+                            <th class="text-center">
                                 @lang('crud.settings.inputs.peralatan_telemetri_id')
                             </th>
                             <th class="text-center">
@@ -79,21 +79,24 @@
                     <tbody>
                         @forelse($settings as $setting)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $setting->namaSetting ?? '-' }}</td>
-                            <td>
+                            <td class="text-center">@php
+                                $number = ($settings->currentPage() - 1) * $settings->perPage() + $loop->iteration;
+                            @endphp
+                            {{ $number }}</td>
+                            <td class="text-center">{{ $setting->namaSetting ?? '-' }}</td>
+                            <td class="text-center">
                                 {{ $setting->nilaiSebelumKalibrasi ?? '-' }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{ $setting->displaySebelumKalibrasi ?? '-' }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{ $setting->nilaiSetelahKalibrasi ?? '-' }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{ $setting->displaySetelahKalibrasi ?? '-' }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{
                                 optional($setting->peralatanTelemetri)->namaAlat
                                 ?? '-' }}

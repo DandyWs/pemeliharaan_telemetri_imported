@@ -51,11 +51,11 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th class="text-left">
+                            <th class="text-center">No</th>
+                            <th class="text-center">
                                 Lokasi Stasiun
                             </th>
-                            <th class="text-left">
+                            <th class="text-center">
                                 Jenis Alat
                             </th>
                             <th class="text-center" style="width: 134px;">
@@ -66,13 +66,13 @@
                     <tbody>
                         @forelse($peralatanTelemetris as $peralatanTelemetri)
                         <tr>
-                            <td>
-                                {{ $loop->iteration }}
+                            <td class="text-center">
+                                {{ $peralatanTelemetris->firstItem() + $loop->index }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{ $peralatanTelemetri->lokasiStasiun ?? '-' }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{
                                 optional($peralatanTelemetri->jenisAlat)->namajenis
                                 ?? '-' }}

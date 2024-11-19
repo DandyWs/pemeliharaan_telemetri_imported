@@ -66,7 +66,11 @@
                     <tbody>
                         @forelse($users as $user)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
+                            <td>@php
+                                $start = ($users->currentPage() - 1) * $users->perPage() + 1;
+                            @endphp
+                            {{ $start + $loop->index }}</td>
+                            
                             <td>{{ $user->name ?? '-' }}</td>
                             <td>{{ $user->email ?? '-' }}</td>
                             <td>{{ $user->role ?? '-' }}</td>

@@ -93,29 +93,33 @@
                     <tbody>
                         @forelse($pemeliharaans as $pemeliharaan)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>
+                            <td class="text-center">@php
+                                $number = ($pemeliharaans->currentPage() - 1) * $pemeliharaans->perPage() + $loop->iteration;
+                            @endphp
+                            {{ $number }}</td>
+                            
+                            <td class="text-center">
                                 {{ $pemeliharaan->tanggal ?? '-' }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{ $pemeliharaan->waktu ?? '-'
                                 }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{ $pemeliharaan->periode ?? '-' }}
                             </td>
-                            <td>{{ $pemeliharaan->cuaca ?? '-' }}</td>
-                            <td>{{ $pemeliharaan->no_alatUkur ?? '-' }}</td>
-                            <td>{{ $pemeliharaan->no_GSM ?? '-' }}</td>
-                            <td>
+                            <td class="text-center">{{ $pemeliharaan->cuaca ?? '-' }}</td>
+                            <td class="text-center">{{ $pemeliharaan->no_alatUkur ?? '-' }}</td>
+                            <td class="text-center">{{ $pemeliharaan->no_GSM ?? '-' }}</td>
+                            <td class="text-center">
                                 {{ optional($pemeliharaan->user)->name ?? '-' }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{
                                 optional($pemeliharaan->alatTelemetri)->lokasiStasiun
                                 ?? '-' }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{
                                 optional($pemeliharaan->alatTelemetri->jenisAlat)->namajenis
                                 ?? '-' }}

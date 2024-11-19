@@ -52,8 +52,8 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th class="text-left">
+                            <th class="text-center">No</th>
+                            <th class="text-center">
                                 @lang('crud.komponens.inputs.nama')
                             </th>
                             {{-- <th class="text-left">
@@ -67,8 +67,11 @@
                     <tbody>
                         @forelse($komponens as $komponen)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $komponen->nama ?? '-' }}</td>
+                            <td class="text-center">@php
+                                $number = ($komponens->currentPage() - 1) * $komponens->perPage() + $loop->iteration;
+                            @endphp
+                            {{ $number }}</td>
+                            <td class="text-center">{{ $komponen->nama ?? '-' }}</td>
                             {{-- <td>
                                 {{
                                 optional($komponen->peralatanTelemetri)->namaAlat
