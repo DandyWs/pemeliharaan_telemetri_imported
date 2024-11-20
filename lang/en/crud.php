@@ -118,11 +118,11 @@ return [
         'show_title' => 'Show Setting',
         'inputs' => [
             'namaSetting' => 'Nama Setting',
-            'nilaiSebelumKalibrasi' => 'Nilai Sebelum Kalibrasi',
-            'displaySebelumKalibrasi' => 'Display Sebelum Kalibrasi',
+            'nilaiSebelumKalibrasi' => 'Simulasi',
+            'displaySebelumKalibrasi' => 'Display',
             'nilaiSetelahKalibrasi' => 'Nilai Setelah Kalibrasi',
-            'displaySetelahKalibrasi' => 'Display Setelah Kalibrasi',
-            'peralatan_telemetri_id' => 'Peralatan Telemetri',
+            'displaySetelahKalibrasi' => 'Lokasi Stasiun',
+            'peralatan_telemetri_id' => 'Jenis Alat',
         ],
     ],
 

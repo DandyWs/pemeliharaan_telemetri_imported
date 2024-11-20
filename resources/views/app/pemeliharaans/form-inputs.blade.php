@@ -1,6 +1,7 @@
 @php $editing = isset($pemeliharaan) @endphp
 
 <div class="row">
+    <div class="row">
         <x-inputs.group class="col-md-6">
             <x-inputs.datetime
                 name="tanggal"
@@ -102,8 +103,9 @@
                 @endforeach
             </x-inputs.select>
         </x-inputs.group>
+    </div>
+    <div class="row">
         @php $editing = isset($komponen) @endphp
-
         @foreach ($komponen2 as $value)
         <div class="col-md-6">
             <x-inputs.group>
@@ -111,6 +113,7 @@
                 <span>{{ old('namaKomponen', ($editing ? $komponen2->nama : '')) }}</span>
             </x-inputs.group>
             @foreach ($detailKomponen->where('komponen2_id', $value->id) as $detailsKomponen)
+            
             <x-inputs.group>
                 <x-inputs.checkbox
                     name="detailKomponen"
@@ -123,6 +126,8 @@
 
         </div>
         @endforeach
+    </div>
+    <div class="row">
         <div class="card">
             <div class="card-header" style="align-items: center";>
                 <b>Tandatangan disini:</b>
@@ -143,6 +148,7 @@
                         :disabled-without-signature="true"
                     />
                 </div>
+    </div>
             <!-- {{-- </form> --}} -->
             <script src="{{ asset('vendor/sign-pad/sign-pad.min.js') }}"></script>
         <!-- {{-- @endif --}} -->

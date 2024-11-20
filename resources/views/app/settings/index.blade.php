@@ -62,9 +62,9 @@
                             <th class="text-center">
                                 @lang('crud.settings.inputs.displaySebelumKalibrasi')
                             </th>
-                            <th class="text-center">
+                            {{-- <th class="text-center">
                                 @lang('crud.settings.inputs.nilaiSetelahKalibrasi')
-                            </th>
+                            </th> --}}
                             <th class="text-center">
                                 @lang('crud.settings.inputs.displaySetelahKalibrasi')
                             </th>
@@ -83,22 +83,22 @@
                                 $number = ($settings->currentPage() - 1) * $settings->perPage() + $loop->iteration;
                             @endphp
                             {{ $number }}</td>
-                            <td class="text-center">{{ $setting->namaSetting ?? '-' }}</td>
+                            <td class="text-center">{{ optional($setting->formKomponen->detailKomponen)->namadetail ?? '-' }}</td>
                             <td class="text-center">
-                                {{ $setting->nilaiSebelumKalibrasi ?? '-' }}
+                                {{ $setting->simulasi ?? '-' }}
                             </td>
                             <td class="text-center">
-                                {{ $setting->displaySebelumKalibrasi ?? '-' }}
+                                {{ $setting->display ?? '-' }}
                             </td>
-                            <td class="text-center">
+                            {{-- <td class="text-center">
                                 {{ $setting->nilaiSetelahKalibrasi ?? '-' }}
-                            </td>
+                            </td> --}}
                             <td class="text-center">
-                                {{ $setting->displaySetelahKalibrasi ?? '-' }}
+                                {{ optional($setting->formKomponen->pemeliharaan2->alatTelemetri)->lokasiStasiun ?? '-' }}
                             </td>
                             <td class="text-center">
                                 {{
-                                optional($setting->peralatanTelemetri)->namaAlat
+                                optional($setting->formKomponen->pemeliharaan2->alatTelemetri->jenisAlat)->namajenis
                                 ?? '-' }}
                             </td>
                             <td class="text-center" style="width: 134px;">

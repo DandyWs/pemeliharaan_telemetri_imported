@@ -2,28 +2,28 @@
 
 <div class="row">
     <x-inputs.group class="col-sm-12">
-        <x-inputs.text
-            name="namaSetting"
-            label="Nama Setting"
-            :value="old('namaSetting', ($editing ? $setting->namaSetting : ''))"
-            maxlength="255"
-            placeholder="Nama Setting"
-            required
-        ></x-inputs.text>
-    </x-inputs.group>
-
-    <x-inputs.group class="col-sm-12">
         <x-inputs.number
-            name="nilaiSebelumKalibrasi"
-            label="Nilai Sebelum Kalibrasi"
-            :value="old('nilaiSebelumKalibrasi', ($editing ? $setting->nilaiSebelumKalibrasi : ''))"
-            max="255"
-            placeholder="Nilai Sebelum Kalibrasi"
+            name="simulasi"
+            label="Simulasi"
+            :value="old('simulasi', ($editing ? $setting->simulasi : ''))"
+            maxlength="255"
+            placeholder="Nilai Simulasi"
             required
         ></x-inputs.number>
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
+        <x-inputs.number
+            name="display"
+            label="Display"
+            :value="old('display', ($editing ? $setting->display : ''))"
+            max="255"
+            placeholder="Nilai Display"
+            required
+        ></x-inputs.number>
+    </x-inputs.group>
+
+    {{-- <x-inputs.group class="col-sm-12">
         <x-inputs.number
             name="displaySebelumKalibrasi"
             label="Display Sebelum Kalibrasi"
@@ -54,17 +54,17 @@
             placeholder="Display Setelah Kalibrasi"
             required
         ></x-inputs.number>
-    </x-inputs.group>
+    </x-inputs.group> --}}
 
     <x-inputs.group class="col-sm-12">
         <x-inputs.select
-            name="peralatan_telemetri_id"
-            label="Peralatan Telemetri"
+            name="form_komponen_id"
+            label="Pilih Form Komponen"
             required
         >
-            @php $selected = old('peralatan_telemetri_id', ($editing ? $setting->peralatan_telemetri_id : '')) @endphp
-            <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Peralatan Telemetri</option>
-            @foreach($peralatanTelemetris as $value => $label)
+            @php $selected = old('form_komponen_id', ($editing ? $setting->form_komponen_id : '')) @endphp
+            <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Form Komponen</option>
+            @foreach($formKomponens as $value => $label)
             <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
             @endforeach
         </x-inputs.select>
